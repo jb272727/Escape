@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bonmbsnat4hy2"]
+
+[ext_resource type="Texture2D" uid="uid://cqgtin17dmi6g" path="res://assets/cards/Screenshot 2024-09-07 010202.png" id="1_5fssp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yj8yw"]
+albedo_texture = ExtResource("1_5fssp")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_84v42"]
+material = SubResource("StandardMaterial3D_yj8yw")
+size = Vector2(1.345, 2)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_84v42")

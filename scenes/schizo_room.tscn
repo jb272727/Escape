@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=3 uid="uid://c451w3mcpysv0"]
+
+[ext_resource type="Texture2D" uid="uid://dh02dda1ue5e" path="res://assets/usuable/output-onlinepngtools-min.png" id="1_48dbm"]
+[ext_resource type="PackedScene" uid="uid://b8ukhs2b42cu3" path="res://assets/physical/locker_face.glb" id="2_27ul1"]
+[ext_resource type="Texture2D" uid="uid://cvqip44y0geaj" path="res://assets/misc/Screenshot 2024-09-13 151518.png" id="3_ulj8s"]
+[ext_resource type="Shader" path="res://assets/usuable/psx_camera_shader.gdshader" id="4_nelwo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_575kb"]
+albedo_texture = ExtResource("1_48dbm")
+uv1_triplanar = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pk1ec"]
+load_path = "res://.godot/imported/output-onlinepngtools-min.png-84ac5caab5a466aa413c55adda7dccda.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_da2ay"]
+albedo_texture = SubResource("CompressedTexture2D_pk1ec")
+uv1_offset = Vector3(-0.69, -0.245, -0.25)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oawgb"]
+albedo_texture = ExtResource("3_ulj8s")
+uv1_scale = Vector3(-0.03, 1.07, 0.02)
+uv1_offset = Vector3(-0.405, 0, 0)
+uv1_triplanar = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_qm4ro"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6e3i"]
+render_priority = 0
+shader = ExtResource("4_nelwo")
+shader_parameter/enable_fog = true
+shader_parameter/fog_color = Color(0, 0, 0.188235, 1)
+shader_parameter/noise_color = Color(0, 0, 0, 1)
+shader_parameter/fog_distance = 100.0
+shader_parameter/fog_fade_range = 50.0
+shader_parameter/enable_noise = true
+shader_parameter/noise_time_fac = 4.0
+shader_parameter/enable_color_limitation = true
+shader_parameter/color_levels = 60
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 0.704
+
+[node name="Schizo Room" type="Node3D"]
+
+[node name="PostProcessViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(960, 540)
+
+[node name="schizo main" type="Camera3D" parent="PostProcessViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39836, 0.83589, 3.03263)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="PostProcessViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30105, -0.23365, 0.0215859)
+material_override = SubResource("StandardMaterial3D_575kb")
+size = Vector3(5.37775, 0.503418, 4.01009)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="PostProcessViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.283696, 1.01482, -1.25309)
+material_override = SubResource("StandardMaterial3D_575kb")
+size = Vector3(3.38251, 2.62286, 0.512222)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="PostProcessViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98232, 1.01376, 0.514421)
+material_override = SubResource("StandardMaterial3D_575kb")
+size = Vector3(0.382145, 3.03412, 3.67899)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="PostProcessViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39409, 1.01631, 0.514967)
+material_override = SubResource("StandardMaterial3D_575kb")
+size = Vector3(0.382145, 3.03412, 3.69278)
+
+[node name="locker_face" parent="PostProcessViewport" instance=ExtResource("2_27ul1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3328, -1.00305, -0.599453)
+
+[node name="ones" type="Node3D" parent="PostProcessViewport"]
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="PostProcessViewport/ones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29321, 1.76623, 0.764631)
+material_override = SubResource("StandardMaterial3D_da2ay")
+size = Vector3(0.388017, 0.505064, 0.493724)
+
+[node name="lights" type="Node3D" parent="PostProcessViewport"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PostProcessViewport/lights"]
+transform = Transform3D(1, 0, 0, 0, 0.0561526, 0.998422, 0, -0.998422, 0.0561526, 0.243127, 2.44341, 1.05369)
+shadow_enabled = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="PostProcessViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524965, 0.650753, 0.821635)
+material_override = SubResource("StandardMaterial3D_oawgb")
+size = Vector3(1.22284, 0.0460205, 1.84143)
+
+[node name="shader" type="MeshInstance3D" parent="PostProcessViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7251, -3.26788, 2.87142)
+cast_shadow = 0
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_qm4ro")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_o6e3i")

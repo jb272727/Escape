@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://deycu7p0e82vm"]
+
+[ext_resource type="MeshLibrary" uid="uid://dnxywl68lmjku" path="res://assets/mesh library PCG/library16.tres" id="1_3gjv8"]
+[ext_resource type="Script" path="res://scenes/tile_game_manager.gd" id="1_ypcm3"]
+[ext_resource type="Texture2D" uid="uid://dh02dda1ue5e" path="res://assets/usuable/output-onlinepngtools-min.png" id="2_tyioc"]
+[ext_resource type="PackedScene" uid="uid://b8ukhs2b42cu3" path="res://assets/physical/locker_face.glb" id="3_esgn8"]
+[ext_resource type="Texture2D" uid="uid://cvqip44y0geaj" path="res://assets/misc/Screenshot 2024-09-13 151518.png" id="4_u4rwe"]
+[ext_resource type="PackedScene" uid="uid://cqoutyq1uyet8" path="res://assets/mesh library PCG/grass_base.glb" id="6_m2318"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b4gh"]
+albedo_texture = ExtResource("2_tyioc")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ylaie"]
+albedo_texture = ExtResource("4_u4rwe")
+uv1_scale = Vector3(-0.03, 1.07, 0.02)
+uv1_offset = Vector3(-0.405, 0, 0)
+uv1_triplanar = true
+
+[node name="TileGame" type="Node3D"]
+script = ExtResource("1_ypcm3")
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.720651, 0)
+mesh_library = ExtResource("1_3gjv8")
+cell_size = Vector3(0.1, 0.05, 0.1)
+cell_scale = 0.025
+data = {
+"cells": PackedInt32Array(1, 0, 38, 0, 0, 38, 65535, 0, 38, 65534, 0, 38, 65533, 0, 38, 65535, 1, 38, 65535, 2, 38, 0, 1, 38, 65534, 1, 38, 65534, 65535, 38, 65535, 65535, 38, 0, 65535, 38, 65535, 65534, 38, 131071, 65534, 6, 131071, 2, 6)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="schizo main" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.838661, 0.544654, 0, -0.544654, 0.838661, -0.0320769, 1.30229, 0.744515)
+fov = 47.3
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96967e-05, -0.23365, 0.0215859)
+material_override = SubResource("StandardMaterial3D_8b4gh")
+size = Vector3(3.79032, 0.503418, 4.01009)
+
+[node name="locker_face" parent="." instance=ExtResource("3_esgn8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3328, -1.00305, -1.57269)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0561526, 0.998422, 0, -0.998422, 0.0561526, 0.243127, 2.44341, 1.05369)
+shadow_enabled = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.75, 0.0540039)
+material_override = SubResource("StandardMaterial3D_ylaie")
+size = Vector3(1.125, 0.05, 1.692)
+
+[node name="grass_base" parent="." instance=ExtResource("6_m2318")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -0.0494869, 0.795572, 0)
+
+[node name="Node3D" type="Node3D" parent="."]
