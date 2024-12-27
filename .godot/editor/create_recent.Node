@@ -1,0 +1,12 @@
+Timer
+Node3D
+OmniLight3D
+CollisionShape3D
+Area3D
+MeshInstance3D
+StaticBody3D
+SpotLight3D
+CSGBox3D
+Camera3D
+RigidBody3D
+AnimationPlayer

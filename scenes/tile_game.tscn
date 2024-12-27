@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://deycu7p0e82vm"]
 
 [ext_resource type="MeshLibrary" uid="uid://dnxywl68lmjku" path="res://assets/mesh library PCG/library16.tres" id="1_3gjv8"]
-[ext_resource type="Script" path="res://scenes/tile_game_manager.gd" id="1_ypcm3"]
+[ext_resource type="Script" path="res://scripts/tile_game_manager.gd" id="1_ypcm3"]
 [ext_resource type="Texture2D" uid="uid://dh02dda1ue5e" path="res://assets/usuable/output-onlinepngtools-min.png" id="2_tyioc"]
 [ext_resource type="PackedScene" uid="uid://b8ukhs2b42cu3" path="res://assets/physical/locker_face.glb" id="3_esgn8"]
 [ext_resource type="Texture2D" uid="uid://cvqip44y0geaj" path="res://assets/misc/Screenshot 2024-09-13 151518.png" id="4_u4rwe"]

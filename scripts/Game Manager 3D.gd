@@ -17,8 +17,12 @@ var grab_cursor : Texture2D
 var menuing : AudioStreamWAV
 @onready var audio_player = $"../AudioStreamPlayer3D"
 var fade_out : ShaderMaterial
+@export var debug: bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if debug:
+		camera = $"hanoi cam"
+	
 	neighbor_scenes = $"../map/Main Scene".neighbor_scenes
 	# Load your custom cursor image
 	back_cursor = preload("res://assets/usuable/back.png") as Texture2D
@@ -62,7 +66,7 @@ func _process(delta):
 func get_current_object() -> StaticBody3D:
 	return current_object
 	
-	
+
 func play_audio(sound : String):
 	if sound == "menuing":
 		audio_player.stream = menuing

@@ -1,0 +1,8 @@
+res://scenes/main.tscn
+res://assets/misc/gold.tres
+res://scenes/hanoi_puzzle.tscn
+res://scenes/plunko.tscn
+res://scenes/coin.tscn
+res://scenes/peg.tscn
+res://scenes/bulb.tscn
+res://scenes/plunko.gd

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d4kba1x8ur264"]
+
+[ext_resource type="Texture2D" uid="uid://75lujlgyp5po" path="res://scripts/plunko-machine_Metal-0663_9.jpg" id="1_x1xa3"]
+
+[resource]
+resource_name = "Material.021"
+cull_mode = 2
+albedo_color = Color(1, 1, 0.427451, 1)
+albedo_texture = ExtResource("1_x1xa3")
+metallic = 0.191667
+roughness = 0.258333

@@ -1,0 +1,208 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1735326227
+icon.svg::CompressedTexture2D::2856659576839581173::1725577953::1734748615::1::::<><>::
+::res://assets/::1735014290
+::res://assets/cards/::1734748616
+Screenshot 2024-09-07 010202.png::CompressedTexture2D::5909417765759772116::1725681804::1734748616::1::::<><>::
+Screenshot 2024-09-07 010220.png::CompressedTexture2D::949340127834208498::1725681804::1734748616::1::::<><>::
+Screenshot 2024-09-07 010236.png::CompressedTexture2D::3821784126685734511::1725681804::1734748616::1::::<><>::
+Screenshot 2024-09-07 010253.png::CompressedTexture2D::6443586273460728176::1725681804::1734748616::1::::<><>::
+Screenshot 2024-09-07 142038.png::CompressedTexture2D::3274850908356090238::1725729654::1734748616::1::::<><>::
+Screenshot 2024-09-08 004147.png::CompressedTexture2D::3429120912931685405::1725766907::1734748616::1::::<><>::
+::res://assets/Games/::1735014293
+plunko.glb::PackedScene::7270736387780589711::1735014266::1735014293::1::::<><>::uid://b71f7q3kqp4cc::::res://assets/Games/plunko_plunko-paint.png<>uid://ckya7wj5hx5sw::::res://assets/Games/plunko_Metal-0663.png<>uid://iayuc05dxije::::res://assets/Games/plunko_red.png<>uid://wn51d3yynw1d::::res://assets/Games/plunko_Metal-0663_3.png<>uid://hkqajko73cpk::::res://assets/Games/plunko_Metal-0663_4.jpg<>uid://che2ume51j4ls::::res://assets/Games/plunko_Screenshot 2024-12-22 143330.png
+plunko_Metal-0663.png::CompressedTexture2D::5524333186059216538::1735014267::1735014291::1::::<><>::
+plunko_Metal-0663_3.png::CompressedTexture2D::1572859613211644343::1735014273::1735014291::1::::<><>::
+plunko_Metal-0663_4.jpg::CompressedTexture2D::512937643729245360::1735014277::1735014292::1::::<><>::
+plunko_plunko-paint.png::CompressedTexture2D::4686499116188965234::1735014267::1735014290::1::::<><>::
+plunko_red.png::CompressedTexture2D::563003817843548094::1735014272::1735014290::1::::<><>::
+plunko_Screenshot 2024-12-22 143330.png::CompressedTexture2D::5274096496409074852::1735014282::1735014290::1::::<><>::
+::res://assets/mesh library PCG/::1734748622
+desert_base.glb::PackedScene::4502397010464948782::1732592119::1734748620::1::::<><>::
+forest.glb::PackedScene::7949291190601311408::1732592107::1734748621::1::::<><>::
+grass_base.glb::PackedScene::5926013710577349879::1732591542::1734748621::1::::<><>::
+library16.tres::MeshLibrary::8120694829169741436::1732590659::0::1::::<><>::
+snow_base.glb::PackedScene::2891684481208125711::1732592145::1734748622::1::::<><>::
+::res://assets/misc/::1735323129
+Decorative-3504.jpg::CompressedTexture2D::7966389607979444971::1726250284::1734748616::1::::<><>::
+gold.tres::StandardMaterial3D::9215444413780008015::1735323129::0::1::::<><>::uid://75lujlgyp5po::::res://scripts/plunko-machine_Metal-0663_9.jpg
+Screenshot 2024-09-13 151518.png::CompressedTexture2D::6280351219801125017::1726251433::1734748615::1::::<><>::
+::res://assets/misc/glTF/::1734748623
+scene.gltf::PackedScene::3969171539453725649::1725767411::1734748623::1::::<><>::uid://cqilktuk7kjim::::res://assets/misc/glTF/textures/Table_baseColor.png<>uid://cgy4xomrhxf7r::::res://assets/misc/glTF/textures/Table_metallicRoughness.png<>uid://bb5bjhti8scg4::::res://assets/misc/glTF/textures/Table_normal.png
+::res://assets/misc/glTF/textures/::1734748617
+Table_baseColor.png::CompressedTexture2D::5913064661823940304::1725767411::1734748617::1::::<><>::
+Table_metallicRoughness.png::CompressedTexture2D::5245322116009093549::1725767411::1734748616::1::::<><>::
+Table_normal.png::CompressedTexture2D::2518618046513864657::1725767411::1734748616::1::::<><>::
+::res://assets/misc/glTF2/::1734748626
+dirty_carpet_diff_1k.jpg::CompressedTexture2D::5656706290400445507::1726175976::1734748615::1::::<><>::
+scene.gltf::PackedScene::2759666946672189966::1725824114::1734748626::1::::<><>::uid://bjmxh3s4lq0v6::::res://assets/misc/glTF2/textures/Material_45_baseColor.png<>uid://bkws5xi2sapw6::::res://assets/misc/glTF2/textures/Material_45_metallicRoughness.png<>uid://dyuajg35df82o::::res://assets/misc/glTF2/textures/Material_45_emissive.png<>uid://dlprp83qudebi::::res://assets/misc/glTF2/textures/Material_45_normal.png
+Screenshot 2024-09-12 190826.png::CompressedTexture2D::7039421559736838483::1726178930::1734748615::1::::<><>::
+::res://assets/misc/glTF2/textures/::1734748616
+Material_45_baseColor.png::CompressedTexture2D::3044303300668341789::1725824114::1734748616::1::::<><>::
+Material_45_emissive.png::CompressedTexture2D::8885098285380351808::1725824114::1734748616::1::::<><>::
+Material_45_metallicRoughness.png::CompressedTexture2D::3134873131996000455::1725824114::1734748616::1::::<><>::
+Material_45_normal.png::CompressedTexture2D::7963365750473053842::1725824114::1734748616::1::::<><>::
+Material_45_transmission.png::CompressedTexture2D::5410967630716150117::1725824114::1734748616::1::::<><>::
+::res://assets/physical/::1735014143
+8ball.glb::PackedScene::5147530717293955830::1725579776::1734748628::1::::<><>::
+10ball.glb::PackedScene::2148067042339339193::1725580273::1734748629::1::::<><>::
+armchair.glb::PackedScene::8988713924040468958::1725815768::1734748629::1::::<><>::
+bishop_white.glb::PackedScene::2389668353433549883::1725735087::1734748630::1::::<><>::
+board.glb::PackedScene::7369495352914348506::1725731678::1734748630::1::::<><>::
+desk_test.glb::PackedScene::1522821969261179126::1725581112::1734748625::1::::<><>::uid://dvoi5qdchum1r::::res://assets/physical/desk_test_oak_veneer_01_diff_1k.jpg<>uid://bi2e7gqfslggg::::res://assets/physical/desk_test_oak_veneer_01_rough_1k.png<>uid://coelfyiaeenpf::::res://assets/physical/desk_test_oak_veneer_01_nor_gl_1k.png<>uid://jipvu2xhvqpc::::res://assets/physical/desk_test_14161.jpg
+desk_test_14161.jpg::CompressedTexture2D::649163964570205048::1725734821::1734748615::1::::<><>::
+desk_test_oak_veneer_01_diff_1k.jpg::CompressedTexture2D::8662669210903140293::1725734820::1734748615::1::::<><>::
+desk_test_oak_veneer_01_nor_gl_1k.png::CompressedTexture2D::5764420778149207063::1725734820::1734748616::1::::<><>::
+desk_test_oak_veneer_01_rough_1k.png::CompressedTexture2D::3003969985641638786::1725734821::1734748616::1::::<><>::
+horse_white.glb::PackedScene::5302623220768879166::1725735087::1734748627::1::::<><>::
+locker_base.glb::PackedScene::6206977507817058990::1726181773::1734748626::1::::<><>::
+locker_door.glb::PackedScene::3907636492577435513::1726248701::1734748626::1::::<><>::
+locker_eyes.glb::PackedScene::2495841507663517628::1726258372::1734748625::1::::<><>::uid://cuuqs3mpbnfuu::::res://assets/physical/locker_eyes_eye_0023_c.jpg
+locker_eyes_eye_0023_c.jpg::CompressedTexture2D::6218910901277439016::1726258373::1734748616::1::::<><>::
+locker_face.glb::PackedScene::4744560736529639380::1726258372::1734748620::1::::<><>::uid://cqoxqpb46pkin::::res://assets/physical/locker_face_skin_0001_color_1k.jpg<>uid://83sdla1a1cvt::::res://assets/physical/locker_face_skin_0001_roughness_1k.png<>uid://dhor1kkejfndv::::res://assets/physical/locker_face_others_0001_color_1k.jpg<>uid://cddnrih8hl5uw::::res://assets/physical/locker_face_others_0001_roughness_1k.png
+locker_face_others_0001_color_1k.jpg::CompressedTexture2D::7680564405496449895::1726258374::1734748616::1::::<><>::
+locker_face_others_0001_roughness_1k.png::CompressedTexture2D::4990421143474448990::1726258374::1734748616::1::::<><>::
+locker_face_skin_0001_color_1k.jpg::CompressedTexture2D::5926190008442375821::1726258373::1734748616::1::::<><>::
+locker_face_skin_0001_roughness_1k.png::CompressedTexture2D::2375133259359450997::1726258374::1734748615::1::::<><>::
+locker_hood.glb::PackedScene::5585741184762818459::1726259315::1734748619::1::::<><>::uid://bwd3pn7jirlaf::::res://assets/physical/locker_hood_fabric_0032_color_1k.jpg<>uid://bwyg1qcggw5yh::::res://assets/physical/locker_hood_fabric_0032_roughness_1k.png
+locker_hood_fabric_0032_color_1k.jpg::CompressedTexture2D::3938495972355610841::1726259316::1734748615::1::::<><>::
+locker_hood_fabric_0032_roughness_1k.png::CompressedTexture2D::3980531886170116095::1726259316::1734748615::1::::<><>::
+lock_base.glb::PackedScene::6964952580882995450::1726249800::1734748620::1::::<><>::
+lock_handle.glb::PackedScene::874775963629779486::1726249800::1734748622::1::::<><>::
+lock_keyhole.glb::PackedScene::82140671707341013::1726249800::1734748622::1::::<><>::
+pawn_white.glb::PackedScene::8198171327629807942::1725730030::1734748623::1::::<><>::
+rook_white.glb::PackedScene::2002131409771749116::1725735087::1734748624::1::::<><>::
+sign.glb::PackedScene::7213339294269824044::1725817139::1734748624::1::::<><>::
+uploads_files_4194288_tv.glb::PackedScene::5726476131516353064::1725663100::1734748624::1::::<><>::
+::res://assets/pipes and other physicals/::1735261895
+bookshelfguy.glb::PackedScene::7426447806562292822::1734897016::1734897021::1::::<><>::uid://cslnxbnfhucy8::::res://assets/pipes and other physicals/bookshelfguy_oak_veneer_01_diff_1k.jpg<>uid://bpxmxmmf8wln3::::res://assets/pipes and other physicals/bookshelfguy_oak_veneer_01_rough_1k.png<>uid://cbpafotemrhb3::::res://assets/pipes and other physicals/bookshelfguy_oak_veneer_01_nor_gl_1k.png<>uid://bba2u4g3o1wft::::res://assets/pipes and other physicals/bookshelfguy_Screenshot 2024-12-22 142120.png<>uid://cyql5f0nnlbye::::res://assets/pipes and other physicals/bookshelfguy_Decorative-2648.jpg<>uid://cgpcio00hrkk8::::res://assets/pipes and other physicals/bookshelfguy_Screenshot 2024-12-22 143330.png
+bookshelfguy_Decorative-2648.jpg::CompressedTexture2D::6491125421346842048::1734897017::1734897023::1::::<><>::
+bookshelfguy_oak_veneer_01_diff_1k.jpg::CompressedTexture2D::6059779175174347465::1734897017::1734897022::1::::<><>::
+bookshelfguy_oak_veneer_01_nor_gl_1k.png::CompressedTexture2D::4874005571181295586::1734897017::1734897022::1::::<><>::
+bookshelfguy_oak_veneer_01_rough_1k.png::CompressedTexture2D::3487504352869980642::1734897017::1734897022::1::::<><>::
+bookshelfguy_Screenshot 2024-12-22 142120.png::CompressedTexture2D::2458286135751854661::1734897017::1734897022::1::::<><>::
+bookshelfguy_Screenshot 2024-12-22 143330.png::CompressedTexture2D::5225076590954997621::1734897021::1734897022::1::::<><>::
+BrokenGlass0048_1_350.jpg::CompressedTexture2D::437042075505885097::1734826994::1734827001::1::::<><>::
+divider.glb::PackedScene::6947796182681562247::1735178722::1735178728::1::::<><>::uid://bxuwjkmrsmtwn::::res://assets/pipes and other physicals/divider_plunko-paint.png<>uid://c2wcmx6iwel3v::::res://assets/pipes and other physicals/divider_Metal-0663.png
+divider_Metal-0663.png::CompressedTexture2D::6713500576033827129::1735178723::1735178730::1::::<><>::
+divider_plunko-paint.png::CompressedTexture2D::4043404033003152741::1735178723::1735178729::1::::<><>::
+gauge.glb::PackedScene::5021637084156777098::1734822882::1734822887::1::::<><>::uid://i3ybtwdwycu8::::res://assets/pipes and other physicals/gauge_metal_8133.jpg<>uid://dcx7uqfkxar7j::::res://assets/pipes and other physicals/gauge_fortnite-gauge.png
+gauge_fortnite-gauge.png::CompressedTexture2D::7349099934928102653::1734822886::1734822887::1::::<><>::
+gauge_metal_8133.jpg::CompressedTexture2D::620773351934234705::1734822883::1734822888::1::::<><>::
+glass_dome.glb::PackedScene::175568184012421481::1734826714::1734826714::1::::<><>::
+handle.glb::PackedScene::1339561154874632467::1735261889::1735261894::1::::<><>::uid://c2egdwhkp5wlm::::res://assets/pipes and other physicals/handle_plastic_0022_color_1k.jpg<>uid://bqacmg67ugvn0::::res://assets/pipes and other physicals/handle_plastic_0022_roughness_1k.png<>uid://cgxt1osoxihje::::res://assets/pipes and other physicals/handle_plastic_0022_normal_1k.jpg<>uid://ckqopkbkr8ett::::res://assets/pipes and other physicals/handle_metal_8133.jpg
+handle_metal_8133.jpg::CompressedTexture2D::5508637199895466433::1735261891::1735261895::1::::<><>::
+handle_plastic_0022_color_1k.jpg::CompressedTexture2D::6676568482770567354::1735261890::1735261895::1::::<><>::
+handle_plastic_0022_normal_1k.jpg::CompressedTexture2D::5242655934862397378::1735261890::1735261895::1::::<><>::
+handle_plastic_0022_roughness_1k.png::CompressedTexture2D::3509585409923969495::1735261890::1735261895::1::::<><>::
+hanoi-puzzle.glb::PackedScene::7145022263832267308::1734831177::1734831179::1::::<><>::uid://cl3tyf8wix27u::::res://assets/pipes and other physicals/hanoi-puzzle_oak_veneer_01_diff_1k.jpg<>uid://pjelw5hthaa1::::res://assets/pipes and other physicals/hanoi-puzzle_oak_veneer_01_rough_1k.png<>uid://dtbtsy28uuckf::::res://assets/pipes and other physicals/hanoi-puzzle_oak_veneer_01_nor_gl_1k.png<>uid://bklbkfr8moo38::::res://assets/pipes and other physicals/hanoi-puzzle_plastic_0010_color_1k.jpg
+hanoi-puzzle_oak_veneer_01_diff_1k.jpg::CompressedTexture2D::5603918021041015160::1734831178::1734831179::1::::<><>::
+hanoi-puzzle_oak_veneer_01_nor_gl_1k.png::CompressedTexture2D::8496101528905836321::1734831177::1734831179::1::::<><>::
+hanoi-puzzle_oak_veneer_01_rough_1k.png::CompressedTexture2D::1071675768262592610::1734831178::1734831179::1::::<><>::
+hanoi-puzzle_plastic_0010_color_1k.jpg::CompressedTexture2D::3111096140694296097::1734831178::1734831179::1::::<><>::
+hanoi-tower.glb::PackedScene::1941503593760750983::1734831827::1734831829::1::::<><>::uid://b512gfnu4f0xq::::res://assets/pipes and other physicals/hanoi-tower_oak_veneer_01_diff_1k.jpg<>uid://r1kn0e374baa::::res://assets/pipes and other physicals/hanoi-tower_oak_veneer_01_rough_1k.png<>uid://hcoqhgf77f8m::::res://assets/pipes and other physicals/hanoi-tower_oak_veneer_01_nor_gl_1k.png
+hanoi-tower_oak_veneer_01_diff_1k.jpg::CompressedTexture2D::4547410171654647226::1734831828::1734831829::1::::<><>::
+hanoi-tower_oak_veneer_01_nor_gl_1k.png::CompressedTexture2D::496329648779037090::1734831828::1734831829::1::::<><>::
+hanoi-tower_oak_veneer_01_rough_1k.png::CompressedTexture2D::1247515869279599852::1734831828::1734831829::1::::<><>::
+pipe1.glb::PackedScene::3742570409402778282::1734822446::1734822450::1::::<><>::uid://hjkjepn2oa7p::::res://assets/pipes and other physicals/pipe1_metal_8133.jpg
+pipe1_metal_8133.jpg::CompressedTexture2D::510524781218333135::1734822446::1734822451::1::::<><>::
+Screenshot 2024-12-22 232333.png::CompressedTexture2D::3084294636456300495::1734930086::1734930089::1::::<><>::
+Screenshot 2024-12-23 000548.png::CompressedTexture2D::7594697302664174733::1734930535::1734930541::1::::<><>::
+WoodDoor-1544.jpg::CompressedTexture2D::5174149527807376103::1734927193::1734927200::1::::<><>::
+::res://assets/usuable/::1734748619
+back.png::CompressedTexture2D::6855171136199921259::1729969966::1734748615::1::::<><>::
+bayer16tile2.png::CompressedTexture2D::2088917344888823271::1725655770::1734748615::1::::<><>::
+blur.gdshader::Shader::-1::1732593317::0::1::::<><>::
+chair.glb::PackedScene::3013098025914247222::1725808729::1734748619::1::::<><>::
+chess-1217-svgrepo-com.png::CompressedTexture2D::5564507851945213773::1725730966::1734748615::1::::<><>::
+chess_material.tres::StandardMaterial3D::4792559443498810678::1732590658::0::1::::<><>::
+desk_test_14161.jpg::CompressedTexture2D::2803028295863434227::1725581112::1734748615::1::::<><>::
+desk_test_oak_veneer_01_diff_1k.jpg::CompressedTexture2D::6242102423267401309::1725581113::1734748615::1::::<><>::
+desk_test_oak_veneer_01_nor_gl_1k.png::CompressedTexture2D::7831105830910982945::1725581113::1734748615::1::::<><>::
+desk_test_oak_veneer_01_rough_1k.png::CompressedTexture2D::6698450598409858229::1725581113::1734748615::1::::<><>::
+dither2.gdshader::Shader::-1::1732593317::0::1::::<><>::
+dither.gdshader::Shader::-1::1732593317::0::1::::<><>::
+dollar png.png::CompressedTexture2D::2285760288768923320::1725731006::1734748615::1::::<><>::
+eighexplore-8x.png::CompressedTexture2D::8072601086506007763::1725655862::1734748615::1::::<><>::
+FADE OUT.tres::ShaderMaterial::4257377831692059292::1732590658::0::1::::<><>::res://assets/usuable/blur.gdshader
+fish png.png::CompressedTexture2D::9084024839938363607::1725731002::1734748615::1::::<><>::
+forward.png::CompressedTexture2D::1534506836369852244::1729969239::1734748615::1::::<><>::
+grab.png::CompressedTexture2D::8090730450726461455::1729987911::1734748615::1::::<><>::
+hand2.png::CompressedTexture2D::2469653171417958673::1729987905::1734748615::1::::<><>::
+hand.png::CompressedTexture2D::2733545666036938757::1729987727::1734748615::1::::<><>::
+left.png::CompressedTexture2D::8717311437027363468::1729969519::1734748615::1::::<><>::
+locker_material.tres::StandardMaterial3D::2260541008986843702::1732590658::0::1::::<><>::uid://brv6lndf110ov::::res://assets/usuable/metal (10).jpg
+menuing.wav::AudioStreamWAV::9038098753314604965::1729917399::1734748618::1::::<><>::
+metal (10).jpg::CompressedTexture2D::3624885516584559397::1726249066::1734748616::1::::<><>::
+metal.png::CompressedTexture2D::7521127152918496217::1726252076::1734748615::1::::<><>::
+metal_5818.jpg::CompressedTexture2D::4989265790693017112::1725818428::1734748616::1::::<><>::
+metal_7310.jpg::CompressedTexture2D::8230142556648308870::1726248877::1734748616::1::::<><>::
+output-onlinepngtools-min.png::CompressedTexture2D::226583478687109520::1729989654::1734748615::1::::<><>::
+Paint_GarageDoor-0518.jpg::CompressedTexture2D::3356315029392479116::1725817701::1734748617::1::::<><>::
+PersianCarpets0012_1_350-removebg-preview.png::CompressedTexture2D::597753242390298239::1725663750::1734748615::1::::<><>::
+PersianCarpets0030_1_350-removebg-preview.png::CompressedTexture2D::6151687726558788692::1725664325::1734748615::1::::<><>::
+psx_camera_shader.gdshader::Shader::-1::1732593317::0::1::::<><>::
+right2.png::CompressedTexture2D::9216030888413287553::1729988006::1734748615::1::::<><>::
+right.png::CompressedTexture2D::4836839124107592890::1729969732::1734748615::1::::<><>::
+Screenshot 2024-09-07 161105.png::CompressedTexture2D::7445334519944927622::1725736363::1734748615::1::::<><>::
+Screenshot 2024-09-07 162450 - Screenshot 2024-09-07 162450.png::CompressedTexture2D::7917436316292573223::1725737650::1734748615::1::::<><>::
+Screenshot 2024-09-08 144259.png::CompressedTexture2D::3530901367757868553::1725817586::1734748615::1::::<><>::
+Screenshot 2024-09-08 144424.png::CompressedTexture2D::3802994979068083058::1725817592::1734748615::1::::<><>::
+Screenshot_2024-09-08_113647-removebg-preview.png::CompressedTexture2D::2344126762750826695::1725806315::1734748615::1::::<><>::
+TEST_SHADER1.gdshader::Shader::-1::1732593317::0::1::::<><>::
+TEST_SHADER1.tres::ShaderMaterial::1659776143368534163::1732590659::0::1::::<><>::res://assets/usuable/TEST_SHADER1.gdshader
+test_shader.gdshader::Shader::-1::1732593317::0::1::::<><>::
+this_way.jpg::CompressedTexture2D::4769584386387252949::1725817513::1734748617::1::::<><>::
+thumb-large-brick_5774.jpg::CompressedTexture2D::8782664726513424167::1725806529::1734748615::1::::<><>::
+::res://assets/usuable/armchair/::1734748618
+armchair.obj::Mesh::935790473534500787::1725808281::1734748618::1::::<><>::
+StripeChair2019-blue.jpg::CompressedTexture2D::3715725766694568942::1725808281::1734748618::1::::<><>::
+StripeChair2019-orange.jpg::CompressedTexture2D::1528043650150163617::1725808281::1734748618::1::::<><>::
+StripeChair2019-pink.jpg::CompressedTexture2D::7289012052592923711::1725808281::1734748618::1::::<><>::
+StripeChair2019.jpg::CompressedTexture2D::2644636539387576673::1725808281::1734748618::1::::<><>::
+StripeChair2019_NM.jpg::CompressedTexture2D::6654311462634856627::1725808281::1734748617::1::::<><>::
+StripeChair2019_Roughness.jpg::CompressedTexture2D::5889090443642917725::1725808281::1734748617::1::::<><>::
+::res://scenes/::1735326218
+bulb.glb::PackedScene::8192104814687520489::1735258572::1735258579::1::::<><>::uid://bam7h3wx52g7::::res://scenes/bulb_Metal-0663.jpg
+bulb.tscn::PackedScene::2649795446628136026::1735326218::0::1::::<><>::uid://d4kba1x8ur264::::res://assets/misc/gold.tres
+bulb_Metal-0663.jpg::CompressedTexture2D::70975004905686904::1735258573::1735258580::1::::<><>::
+card2.tscn::PackedScene::7608044913776866872::1732591255::0::1::::<><>::uid://bmwmk0kay40m1::::res://assets/cards/Screenshot 2024-09-07 142038.png
+card3.tscn::PackedScene::5881736976369284208::1732591255::0::1::::<><>::uid://nr4q1e6y44qw::::res://assets/cards/Screenshot 2024-09-07 010220.png
+card4.tscn::PackedScene::2324344447468868471::1732591255::0::1::::<><>::uid://cx2k6oyygtyeq::::res://assets/cards/Screenshot 2024-09-07 010253.png
+card.tscn::PackedScene::3396632760664733119::1732591255::0::1::::<><>::uid://cqgtin17dmi6g::::res://assets/cards/Screenshot 2024-09-07 010202.png
+coin.gd::GDScript::-1::1735023643::0::1::::<>Node3D<>::
+coin.glb::PackedScene::2313777462282787660::1735017257::1735017258::1::::<><>::uid://bv6gopiyc0xju::::res://scenes/coin_Screenshot 2024-12-23 233414.png
+coin.tscn::PackedScene::1524158437448236957::1735326218::0::1::::<><>::res://scenes/test_script.gd<>uid://bv6gopiyc0xju::::res://scenes/coin_Screenshot 2024-12-23 233414.png
+coin_Screenshot 2024-12-23 233414.png::CompressedTexture2D::3924772214841721354::1735017258::1735017258::1::::<><>::
+hanoi_puzzle.tscn::PackedScene::3806506019891503874::1735326217::0::1::::<><>::uid://bklbkfr8moo38::::res://assets/pipes and other physicals/hanoi-puzzle_plastic_0010_color_1k.jpg<>res://scripts/Debug Game Manager.gd<>uid://i3ybtwdwycu8::::res://assets/pipes and other physicals/gauge_metal_8133.jpg<>uid://csha7tl2jc0ot::::res://scripts/BrokenGlass0048_1_350.jpg
+locker.tscn::PackedScene::1624117097659003265::1732591255::0::1::::<><>::uid://7ha1r378i8ko::::res://assets/usuable/locker_material.tres<>uid://jipvu2xhvqpc::::res://assets/physical/desk_test_14161.jpg<>uid://cvqip44y0geaj::::res://assets/misc/Screenshot 2024-09-13 151518.png<>uid://dffj4ombh6y8p::::res://assets/usuable/metal.png
+main.tscn::PackedScene::306212585890865247::1735326217::0::1::::<><>::uid://cu6yrri0w60ab::::res://assets/usuable/desk_test_oak_veneer_01_diff_1k.jpg<>res://scripts/Game Manager.gd<>res://scripts/Chess Scene.gd<>res://scripts/Game Manager 3D.gd<>uid://irs55kn5t4k6::::res://assets/usuable/PersianCarpets0012_1_350-removebg-preview.png<>uid://c2o1rdeeap4u8::::res://assets/usuable/desk_test_oak_veneer_01_rough_1k.png<>uid://cljqvp3cbwdb6::::res://assets/usuable/chess-1217-svgrepo-com.png<>uid://bwsxw7yavsqfh::::res://assets/misc/glTF/scene.gltf<>res://scripts/Main Scene.gd<>uid://d2omtdt0prwbf::::res://assets/usuable/fish png.png<>uid://djtpf0ikdrjlp::::res://assets/usuable/desk_test_oak_veneer_01_nor_gl_1k.png<>uid://b1wknj4bncgf1::::res://assets/usuable/FADE OUT.tres<>uid://bf62p4jr3vj1t::::res://assets/usuable/desk_test_14161.jpg<>uid://7tiexsbnq1oe::::res://assets/usuable/dollar png.png<>res://assets/usuable/psx_camera_shader.gdshader<>uid://cajs0vov2uwos::::res://assets/usuable/chess_material.tres<>uid://ctv6nsgjpcrwe::::res://assets/usuable/PersianCarpets0030_1_350-removebg-preview.png<>uid://bonmbsnat4hy2::::res://scenes/card.tscn<>res://assets/usuable/blur.gdshader<>uid://dgnnng0b0uuke::::res://scenes/card2.tscn<>uid://d1cg2mwesmgcc::::res://assets/physical/armchair.glb<>uid://dectto7yfvqnu::::res://assets/usuable/Screenshot 2024-09-07 161105.png<>uid://dxeng73xug77x::::res://assets/usuable/thumb-large-brick_5774.jpg<>uid://dk2jawnu0d8q2::::res://assets/usuable/Screenshot 2024-09-07 162450 - Screenshot 2024-09-07 162450.png<>uid://8nropwbo5iup::::res://assets/usuable/Screenshot_2024-09-08_113647-removebg-preview.png<>uid://cx2k6oyygtyeq::::res://assets/cards/Screenshot 2024-09-07 010253.png<>uid://bmwmk0kay40m1::::res://assets/cards/Screenshot 2024-09-07 142038.png<>uid://cp2fl4cb76omi::::res://scenes/card3.tscn<>uid://bupkhxqpaqfhn::::res://assets/cards/Screenshot 2024-09-07 010236.png<>uid://cdc3qjke8p3xs::::res://assets/usuable/metal_5818.jpg<>uid://bn23avafwyibk::::res://assets/usuable/Paint_GarageDoor-0518.jpg<>uid://cqgtin17dmi6g::::res://assets/cards/Screenshot 2024-09-07 010202.png<>uid://bqknouxgsvtsr::::res://assets/usuable/Screenshot 2024-09-08 144259.png<>uid://bo4dedht3cyj2::::res://assets/cards/Screenshot 2024-09-08 004147.png<>uid://b87omf31xgmjt::::res://assets/usuable/this_way.jpg<>uid://8d6u4fneo01p::::res://scenes/card4.tscn<>uid://cqoxqpb46pkin::::res://assets/physical/locker_face_skin_0001_color_1k.jpg<>uid://83sdla1a1cvt::::res://assets/physical/locker_face_skin_0001_roughness_1k.png<>uid://cmufej3d2dxq6::::res://assets/misc/glTF2/dirty_carpet_diff_1k.jpg<>uid://dhor1kkejfndv::::res://assets/physical/locker_face_others_0001_color_1k.jpg<>uid://dgg6s4s1a8p5n::::res://assets/pipes and other physicals/Screenshot 2024-12-23 000548.png<>uid://cddnrih8hl5uw::::res://assets/physical/locker_face_others_0001_roughness_1k.png<>uid://cuuqs3mpbnfuu::::res://assets/physical/locker_eyes_eye_0023_c.jpg<>uid://clt1lupsv7m56::::res://assets/physical/locker_hood.glb<>uid://7ha1r378i8ko::::res://assets/usuable/locker_material.tres<>uid://cvqip44y0geaj::::res://assets/misc/Screenshot 2024-09-13 151518.png<>uid://dffj4ombh6y8p::::res://assets/usuable/metal.png<>uid://hjkjepn2oa7p::::res://assets/pipes and other physicals/pipe1_metal_8133.jpg<>res://scripts/gauge.gd<>uid://i3ybtwdwycu8::::res://assets/pipes and other physicals/gauge_metal_8133.jpg<>uid://dcx7uqfkxar7j::::res://assets/pipes and other physicals/gauge_fortnite-gauge.png<>uid://ghyawd6mf1bx::::res://assets/pipes and other physicals/BrokenGlass0048_1_350.jpg<>uid://cfynqsyawdh7t::::res://assets/pipes and other physicals/WoodDoor-1544.jpg<>uid://o1d70iaog5sp::::res://scenes/plunko.tscn<>uid://xwajg2cn7h6j::::res://assets/usuable/TEST_SHADER1.tres<>uid://cslnxbnfhucy8::::res://assets/pipes and other physicals/bookshelfguy_oak_veneer_01_diff_1k.jpg<>uid://c82dqcsk7h3rc::::res://assets/pipes and other physicals/hanoi-puzzle.glb<>uid://bpxmxmmf8wln3::::res://assets/pipes and other physicals/bookshelfguy_oak_veneer_01_rough_1k.png<>uid://cbpafotemrhb3::::res://assets/pipes and other physicals/bookshelfguy_oak_veneer_01_nor_gl_1k.png<>uid://cgpcio00hrkk8::::res://assets/pipes and other physicals/bookshelfguy_Screenshot 2024-12-22 143330.png<>uid://bj7b48v0uxt2v::::res://assets/pipes and other physicals/Screenshot 2024-12-22 232333.png
+peg.gd::GDScript::-1::1735252779::0::1::::<>Node3D<>::
+peg.tscn::PackedScene::5197022558935270153::1735326218::0::1::::<><>::res://scenes/peg.gd<>uid://hkqajko73cpk::::res://assets/Games/plunko_Metal-0663_4.jpg
+plunko.gd::GDScript::-1::1735326215::0::1::::<>Node3D<>::
+plunko.tscn::PackedScene::1036558254382432379::1735326218::0::1::::<><>::res://scenes/plunko.gd<>uid://bd0t0j556ml2i::::res://scenes/bulb.tscn<>uid://1ehvbll5i7ab::::res://scripts/plunko-machine_plunko-paint.png<>uid://tc5m2ij2d72v::::res://assets/pipes and other physicals/handle.glb<>uid://bgaqoq1nk8jru::::res://scripts/plunko-machine_Metal-0663.png<>uid://c58tgnm3xhobf::::res://assets/pipes and other physicals/divider.glb<>uid://d4kba1x8ur264::::res://assets/misc/gold.tres<>uid://fjgruxso0rna::::res://scripts/plunko-machine_Screenshot 2024-12-22 143330.png<>uid://cgbqg42jrps0h::::res://scenes/peg.tscn<>uid://cfedikblh2ng8::::res://scripts/plunko-machine_oak_veneer_01_diff_1k.jpg<>uid://jt0abbbnqu88::::res://scripts/plunko-machine_oak_veneer_01_rough_1k.png<>uid://bdo3lqugntypg::::res://scripts/plunko-machine_oak_veneer_01_nor_gl_1k.png
+schizo_room.tscn::PackedScene::6871868584092108059::1732591255::0::1::::<><>::uid://dh02dda1ue5e::::res://assets/usuable/output-onlinepngtools-min.png<>uid://b8ukhs2b42cu3::::res://assets/physical/locker_face.glb<>uid://cvqip44y0geaj::::res://assets/misc/Screenshot 2024-09-13 151518.png<>res://assets/usuable/psx_camera_shader.gdshader
+test_script.gd::GDScript::-1::1735245381::0::1::::<>RigidBody3D<>::
+tile_game.tscn::PackedScene::7489721346654328938::1734835475::0::1::::<><>::uid://dnxywl68lmjku::::res://assets/mesh library PCG/library16.tres<>res://scripts/tile_game_manager.gd<>uid://dh02dda1ue5e::::res://assets/usuable/output-onlinepngtools-min.png<>uid://b8ukhs2b42cu3::::res://assets/physical/locker_face.glb<>uid://cvqip44y0geaj::::res://assets/misc/Screenshot 2024-09-13 151518.png<>uid://cqoutyq1uyet8::::res://assets/mesh library PCG/grass_base.glb
+wall_cover.tscn::PackedScene::1842884816940971867::1732591255::0::1::::<><>::uid://dlq8jjruwlv2j::::res://assets/misc/Decorative-3504.jpg
+::res://scripts/::1735173288
+BrokenGlass0048_1_350.jpg::CompressedTexture2D::6050749358729552915::1734893494::1734893498::1::::<><>::
+Chess Scene.gd::GDScript::-1::1730051242::0::1::::<>Area<>::
+Debug Game Manager.gd::GDScript::-1::1734893336::0::1::::<>Node3D<>::
+Game Manager 3D.gd::GDScript::-1::1734835244::0::1::::<>Node3D<>::
+Game Manager.gd::GDScript::-1::1726275138::0::1::::<>Node<>::
+gauge.gd::GDScript::-1::1734831448::0::1::::<>Node3D<>::
+Main Scene.gd::GDScript::-1::1729988595::0::1::::<>Area<>::
+plunko-machine.glb::PackedScene::2688443429980504623::1735173262::1735173285::1::::<><>::uid://1ehvbll5i7ab::::res://scripts/plunko-machine_plunko-paint.png<>uid://bgaqoq1nk8jru::::res://scripts/plunko-machine_Metal-0663.png<>uid://biikwevs676xw::::res://scripts/plunko-machine_Metal-0663_2.png<>uid://ccde5mhvaish4::::res://scripts/plunko-machine_Metal-0663_3.jpg<>uid://fjgruxso0rna::::res://scripts/plunko-machine_Screenshot 2024-12-22 143330.png<>uid://j3ltmhxvpl8i::::res://scripts/plunko-machine_Screenshot 2024-12-23 233414.png<>uid://cfedikblh2ng8::::res://scripts/plunko-machine_oak_veneer_01_diff_1k.jpg<>uid://jt0abbbnqu88::::res://scripts/plunko-machine_oak_veneer_01_rough_1k.png<>uid://bdo3lqugntypg::::res://scripts/plunko-machine_oak_veneer_01_nor_gl_1k.png<>uid://75lujlgyp5po::::res://scripts/plunko-machine_Metal-0663_9.jpg
+plunko-machine_Metal-0663.png::CompressedTexture2D::2808551099664076354::1735173263::1735173288::1::::<><>::
+plunko-machine_Metal-0663_2.png::CompressedTexture2D::2965093155618262416::1735173269::1735173288::1::::<><>::
+plunko-machine_Metal-0663_3.jpg::CompressedTexture2D::4919709271760970995::1735173273::1735173288::1::::<><>::
+plunko-machine_Metal-0663_9.jpg::CompressedTexture2D::2308678421845667836::1735173280::1735173288::1::::<><>::
+plunko-machine_oak_veneer_01_diff_1k.jpg::CompressedTexture2D::5132240061210668041::1735173279::1735173286::1::::<><>::
+plunko-machine_oak_veneer_01_nor_gl_1k.png::CompressedTexture2D::2627609094254900492::1735173279::1735173286::1::::<><>::
+plunko-machine_oak_veneer_01_rough_1k.png::CompressedTexture2D::672440749020204291::1735173280::1735173286::1::::<><>::
+plunko-machine_plunko-paint.png::CompressedTexture2D::1833630036282879041::1735173263::1735173286::1::::<><>::
+plunko-machine_Screenshot 2024-12-22 143330.png::CompressedTexture2D::369919365264735398::1735173279::1735173286::1::::<><>::
+plunko-machine_Screenshot 2024-12-23 233414.png::CompressedTexture2D::690204629028103166::1735173279::1735173286::1::::<><>::
+Scene Class.gd::GDScript::-1::1730051173::0::1::::Area<>Node3D<>::
+tile_game_manager.gd::GDScript::-1::1732591244::0::1::::<>Node3D<>::
