@@ -1,0 +1,173 @@
+[gd_scene load_steps=12 format=3 uid="uid://y256k68c4r3y"]
+
+[ext_resource type="PackedScene" uid="uid://dfllm5fhuweay" path="res://scenes/panel_set.tscn" id="1_it8yq"]
+[ext_resource type="PackedScene" uid="uid://c6yvwfmiw8fpt" path="res://scenes/pillar.tscn" id="2_if8cw"]
+[ext_resource type="PackedScene" uid="uid://op3j012tkde4" path="res://scenes/pillar_top.tscn" id="3_gwrtv"]
+[ext_resource type="Texture2D" uid="uid://7yf6g6jfhope" path="res://assets/library assets/paf60pug.png" id="4_hjix1"]
+[ext_resource type="Shader" path="res://assets/usuable/psx_camera_shader.gdshader" id="5_fhqnj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6srli"]
+albedo_texture = ExtResource("4_hjix1")
+uv1_scale = Vector3(0.833, 0.627, 0.642)
+uv1_offset = Vector3(0.48, 0, 0)
+uv1_triplanar = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_pcuc4"]
+material = SubResource("StandardMaterial3D_6srli")
+size = Vector2(9.615, 7.855)
+
+[sub_resource type="QuadMesh" id="QuadMesh_446de"]
+material = SubResource("StandardMaterial3D_6srli")
+size = Vector2(8.925, 7.855)
+
+[sub_resource type="QuadMesh" id="QuadMesh_j02p5"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2vum8"]
+render_priority = 0
+shader = ExtResource("5_fhqnj")
+shader_parameter/enable_fog = true
+shader_parameter/fog_color = Color(0, 0, 0.188235, 1)
+shader_parameter/noise_color = Color(0, 0, 0, 1)
+shader_parameter/fog_distance = 100.0
+shader_parameter/fog_fade_range = 50.0
+shader_parameter/enable_noise = true
+shader_parameter/noise_time_fac = 4.0
+shader_parameter/enable_color_limitation = true
+shader_parameter/color_levels = 60
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 0.704
+
+[sub_resource type="Environment" id="Environment_ldmw3"]
+background_mode = 1
+background_color = Color(0.0431373, 0.0431373, 0.137255, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.00971344, 0.00971182, 0.0562966, 1)
+ambient_light_energy = 2.68
+
+[node name="Library" type="Node3D"]
+
+[node name="library_assets" type="Node3D" parent="."]
+
+[node name="Panel Set2" parent="library_assets" instance=ExtResource("1_it8yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36954, 0, 0)
+
+[node name="Panel Set3" parent="library_assets" instance=ExtResource("1_it8yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.752, 0, 0)
+
+[node name="Panel Set4" parent="library_assets" instance=ExtResource("1_it8yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1326, 0, 0)
+
+[node name="Panel Set5" parent="library_assets" instance=ExtResource("1_it8yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.515, 0, 0)
+
+[node name="Pillar" parent="library_assets" instance=ExtResource("2_if8cw")]
+transform = Transform3D(0.209597, 0, 0, 0, 3.90772, 0, 0, 0, 0.209597, 2.59823, 3.892, -0.117395)
+
+[node name="Pillar Top" parent="library_assets/Pillar" instance=ExtResource("3_gwrtv")]
+transform = Transform3D(2.26785, 0, 0, 0, 0.0543706, 0, 0, 0, 2.26785, 0, 0.947355, 0)
+
+[node name="Pillar4" parent="library_assets" instance=ExtResource("2_if8cw")]
+transform = Transform3D(0.209597, 0, 0, 0, 3.90772, 0, 0, 0, 0.209597, 12.0445, 3.892, -0.117395)
+
+[node name="Pillar Top" parent="library_assets/Pillar4" instance=ExtResource("3_gwrtv")]
+transform = Transform3D(2.26785, 0, 0, 0, 0.0543706, 0, 0, 0, 2.26785, 0, 0.947355, 0)
+
+[node name="Pillar2" parent="library_assets" instance=ExtResource("2_if8cw")]
+transform = Transform3D(-9.16178e-09, -3.90772, 0, 0.209597, -1.70812e-07, 0, 0, 0, 0.209597, 6.44742, 8.00408, -0.117395)
+
+[node name="Pillar3" parent="library_assets" instance=ExtResource("2_if8cw")]
+transform = Transform3D(-9.16178e-09, -3.90772, 0, 0.209597, -1.70812e-07, 0, 0, 0, 0.209597, 8.56294, 8.00408, -0.117395)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.3198, 3.9651, 0.0586934)
+mesh = SubResource("QuadMesh_pcuc4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.982008, 0, 0.188838, 0, 1, 0, -0.188838, 0, 0.982008, 0.323536, 3.9651, -12.3606)
+mesh = SubResource("QuadMesh_446de")
+
+[node name="env" type="Node3D" parent="."]
+
+[node name="shader" type="MeshInstance3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7251, -3.26788, 2.87142)
+visible = false
+cast_shadow = 0
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_j02p5")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_2vum8")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_ldmw3")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, -0.538624, 0.842546, 0, -0.842546, -0.538624, 12.0315, 4.15103, -2.86413)
+light_energy = 1.708
+spot_range = 15.083
+spot_angle = 47.646
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, -0.538624, 0.842546, 0, -0.842546, -0.538624, 7.36905, 4.15103, -2.86413)
+light_energy = 1.708
+spot_range = 15.083
+spot_angle = 47.646
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, -0.0431141, 0.99907, 0, -0.99907, -0.0431141, 3.80504, 9.41199, -5.44408)
+light_energy = 9.071
+spot_range = 15.083
+spot_angle = 64.4765
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, -0.538624, 0.842546, 0, -0.842546, -0.538624, 2.61902, 4.15103, -2.86413)
+light_energy = 1.708
+spot_range = 15.083
+spot_angle = 47.646
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, -0.538624, 0.842546, 0, -0.842546, -0.538624, -2.47399, 4.15103, -2.86413)
+light_energy = 1.708
+spot_range = 15.083
+spot_angle = 47.646
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, -0.100414, 0.994946, 0, -0.994946, -0.100414, 2.3744, 10.2365, -4.57866)
+spot_range = 11.236
+spot_angle = 47.646
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, -0.100414, 0.994946, 0, -0.994946, -0.100414, 5.74339, 10.2365, -4.57866)
+spot_range = 11.236
+spot_angle = 47.646
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, -0.100414, 0.994946, 0, -0.994946, -0.100414, 9.22735, 10.2365, -4.57866)
+spot_range = 11.236
+spot_angle = 47.646
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.928304, 0, 0.371822, 0, 1, 0, -0.371822, 0, -0.928304, 10.6248, 3.11386, -5.82326)
+
+[node name="walls" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9414, 0.973169, -8.56332)
+size = Vector3(1, 49.5985, 46.1353)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="walls"]
+transform = Transform3D(0.0403411, 0, 0.999186, 0, 1, 0, -0.999186, 0, 0.0403411, 8.45955, 0.973169, 15.1442)
+size = Vector3(1, 49.5985, 46.1353)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="walls"]
+transform = Transform3D(-0.999967, 0, -0.00815057, 0, 1, 0, 0.00815057, 0, -0.999967, 42.9373, 0.973169, -5.73518)
+size = Vector3(1, 49.5985, 72.6207)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="walls"]
+transform = Transform3D(-0.0810514, 0, -0.99671, 0, 1, 0, 0.99671, 0, -0.0810514, 25.018, 0.973169, -28.0638)
+size = Vector3(1, 49.5985, 72.6207)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="walls"]
+transform = Transform3D(-0.0810514, 0, -0.99671, -0.994858, -0.0609266, 0.0809008, -0.0607262, 0.998142, 0.00493819, 25.018, -15.479, -9.01484)
+size = Vector3(1, 49.5985, 72.6207)

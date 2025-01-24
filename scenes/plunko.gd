@@ -1,6 +1,7 @@
 extends Node3D
 
-@export var CoinScene: PackedScene = preload("res://scenes/coin.tscn")
+@export var CoinScene: PackedScene = preload("res://scenes/coin2.tscn")
+var current_coin = null
 var previously_set : bool = false
 @export var test_diff : float
 var stats : Array
@@ -36,7 +37,7 @@ func play(val:bool)->void:
 		var diff : float = float(rng.randi_range(-20, 20))
 		diff = diff / 1000
 		diff = 0.0
-		spawn_coin(Vector3(0.0 + test_diff, 1.801, 0.019))
+		spawn_coin(Vector3(0.0 + test_diff, 1.801, 0.019)) #1.801, 0.019
 
 
 @export var print_stats : bool = false : set = print_s
@@ -53,7 +54,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(current_pattern)
+	#print(current_pattern)
 	if previously_set == false:
 		if coin_inserted:
 			rng.randomize()
@@ -63,10 +64,22 @@ func _process(delta):
 
 func spawn_coin(position: Vector3) -> void:
 	var coin_instance = CoinScene.instantiate()
+	#coin_instance.translation = position 
 	coin_instance.global_transform.origin = position
+	#coin_instance.scale = Vector3(1.745, 1.745, 1.745)
+	#for child in coin_instance.get_children(true):
+		#child.scale = Vector3(1.745, 1.745, 1.745)
+	print("Coin Scale: ", coin_instance.scale)
 
 	$"Light Timer".start(0.0)
 	add_child(coin_instance)
+	#add_sibling(coin_instance)
+	#print(get_parent().get_children())
+	
+	#for child in get_children():
+		#if child.name == "coin2":
+			#print("YYYYYYYYAYAYBAAAAAAAAAA")
+			#child.scale = Vector3(1.745, 1.745, 1.745)
 
 
 func set_pattern1():
@@ -170,13 +183,14 @@ func body_entered(body, area_num : int):
 	if test:
 		var children = get_children()
 		for child in children:
-			if child.name == "coin":
+			if child.name == "coin2":
 				child.queue_free()
 				remove_child(child)
 				#$"Test Timer".start(0.0)
 				#play(coin_inserted)
 		$"Light Timer".stop()
 		unset_all()
+		flash_count = 0
 		current_pattern = 3
 		match area_num:
 			1:
@@ -293,7 +307,7 @@ func _on_area_3d_9_body_entered(body):
 
 func _on_test_timer_timeout():
 	print("timeout")
-	play(coin_inserted)
+	#play(coin_inserted)
 
 # Distn:    [305, 82, 60, 117, 62, 106, 65, 68, 293] for about 1240 tries w/ 35 timeouts
 
@@ -305,7 +319,6 @@ func set_all():          # set all lights on
 			for child in bulb.get_children():
 				if child is OmniLight3D:
 					light = child
-					print(light)
 			light.visible = true
 		bulbs = $bulbs/left.get_children()
 		for bulb in bulbs:
@@ -313,7 +326,6 @@ func set_all():          # set all lights on
 			for child in bulb.get_children():
 				if child is OmniLight3D:
 					light = child
-					print(light)
 			light.visible = true
 		bulbs = $bulbs/right.get_children()
 		for bulb in bulbs:
@@ -321,7 +333,6 @@ func set_all():          # set all lights on
 			for child in bulb.get_children():
 				if child is OmniLight3D:
 					light = child
-					print(light)
 			light.visible = true
 		bulbs = $bulbs/bottom.get_children()
 		for bulb in bulbs:
@@ -329,7 +340,6 @@ func set_all():          # set all lights on
 			for child in bulb.get_children():
 				if child is OmniLight3D:
 					light = child
-					print(light)
 			light.visible = true
 			
 func unset_all() -> void:
@@ -370,7 +380,6 @@ func set_pattern2(iteration : int) -> void:
 			for child in bulb.get_children():
 				if child is OmniLight3D:
 					light = child
-					print(light)
 			light.visible = true
 		bulbs = $bulbs/left.get_children()
 		for bulb in bulbs:
@@ -378,7 +387,6 @@ func set_pattern2(iteration : int) -> void:
 			for child in bulb.get_children():
 				if child is OmniLight3D:
 					light = child
-					print(light)
 			light.visible = false
 		bulbs = $bulbs/right.get_children()
 		for bulb in bulbs:
@@ -386,7 +394,6 @@ func set_pattern2(iteration : int) -> void:
 			for child in bulb.get_children():
 				if child is OmniLight3D:
 					light = child
-					print(light)
 			light.visible = false
 		bulbs = $bulbs/bottom.get_children()
 		for bulb in bulbs:
@@ -394,7 +401,6 @@ func set_pattern2(iteration : int) -> void:
 			for child in bulb.get_children():
 				if child is OmniLight3D:
 					light = child
-					print(light)
 			light.visible = false
 	else:
 		var bulbs = $bulbs/left.get_children()
@@ -403,7 +409,6 @@ func set_pattern2(iteration : int) -> void:
 			for child in bulbs[12-i].get_children():
 				if child is OmniLight3D:
 					light = child
-					print(light)
 			light.visible = true
 		bulbs = $bulbs/right.get_children()
 		for i in range(iteration):
@@ -417,7 +422,7 @@ func set_pattern2(iteration : int) -> void:
 
 
 func _on_light_timer_timeout():
-	if current_pattern != 3:
+	if current_pattern <= 2 and current_pattern >= 1:
 		flash_count += 1
 		if flash_count > 6:
 			if global_count <= 13 and global_count >= 1:		# set all the lights to on > then start iterating through the pattern
@@ -429,9 +434,11 @@ func _on_light_timer_timeout():
 					print(global_count)
 					set_pattern2(global_count)
 					global_count += 1
-			if global_count == 0:
+			elif global_count == 0:
 				set_all()
 				global_count += 1
+			else:
+				global_count = 0
 	match current_pattern:
 		0:
 			set_all()
@@ -440,7 +447,11 @@ func _on_light_timer_timeout():
 		2:
 			pass
 		3:
-			single_blink()
+			if flash_count < 8:
+				single_blink()
+				flash_count += 1
+			else:
+				current_pattern = 0
 
 
 func single_blink() -> void:

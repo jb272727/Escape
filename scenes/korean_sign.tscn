@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr61snbgqueme"]
+
+[ext_resource type="Texture2D" uid="uid://c7slv4651lpiw" path="res://assets/usuable/KoreanSign_108.jpg" id="1_340fm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0w5uw"]
+albedo_texture = ExtResource("1_340fm")
+uv1_scale = Vector3(1.004, 2.064, 1.004)
+uv1_offset = Vector3(-0.495, 9.52, 0)
+uv1_triplanar = true
+
+[node name="Korean Sign" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.056366, -0.023283)
+size = Vector3(1, 0.481018, 0.00727463)
+material = SubResource("StandardMaterial3D_0w5uw")

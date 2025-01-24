@@ -1244,7 +1244,6 @@ shadow_mesh = SubResource("ArrayMesh_qrc4a")
 [node name="plunko" type="Node3D"]
 transform = Transform3D(-1.23995, 0, -0.0112104, 0, 1.24, 0, 0.0112104, 0, -1.23995, 0, 0, 0)
 script = ExtResource("1_ud4s8")
-coin_inserted = true
 
 [node name="Light Timer" type="Timer" parent="."]
 wait_time = 0.215
@@ -1466,10 +1465,49 @@ skeleton = NodePath("")
 [node name="Light" type="OmniLight3D" parent="bulbs/mid"]
 transform = Transform3D(0.453202, 0.665644, -0.0434715, 0.666425, -0.44951, 0.0646765, 0.0291533, -0.0722696, -0.802677, -0.0112802, 1.78956, -0.0316674)
 light_color = Color(0.436058, 8.66354e-07, 1.68458e-07, 1)
-light_energy = 3.444
+light_energy = 5.133
+distance_fade_begin = 0.1
+omni_range = 1.592
+
+[node name="Light2" type="OmniLight3D" parent="bulbs/mid"]
+transform = Transform3D(0.453202, 0.665644, -0.0434714, 0.666425, -0.44951, 0.0646765, 0.0291533, -0.0722696, -0.802677, -0.339254, 0.682493, -0.22713)
+light_color = Color(0.436058, 8.66354e-07, 1.68458e-07, 1)
+light_energy = 5.133
 distance_fade_enabled = true
 distance_fade_begin = 0.1
-omni_range = 8.757
+omni_range = 1.181
+
+[node name="Light3" type="OmniLight3D" parent="bulbs/mid"]
+transform = Transform3D(0.453202, 0.665644, -0.0434714, 0.666425, -0.44951, 0.0646765, 0.0291533, -0.0722696, -0.802677, 0.363288, 0.682493, -0.220778)
+light_color = Color(0.436058, 8.66354e-07, 1.68458e-07, 1)
+light_energy = 5.133
+distance_fade_enabled = true
+distance_fade_begin = 0.1
+omni_range = 1.181
+
+[node name="Light4" type="OmniLight3D" parent="bulbs/mid"]
+transform = Transform3D(0.453202, 0.665644, -0.0434714, 0.666425, -0.44951, 0.0646765, 0.0291533, -0.0722696, -0.802677, 0.3609, 1.26706, 0.0433415)
+light_color = Color(0.436058, 8.66354e-07, 1.68458e-07, 1)
+light_energy = 5.133
+distance_fade_enabled = true
+distance_fade_begin = 0.1
+omni_range = 1.181
+
+[node name="Light5" type="OmniLight3D" parent="bulbs/mid"]
+transform = Transform3D(0.453202, 0.665644, -0.0434714, 0.666425, -0.44951, 0.0646765, 0.0291533, -0.0722696, -0.802677, -0.436105, 1.26706, 0.0361357)
+light_color = Color(0.436058, 8.66354e-07, 1.68458e-07, 1)
+light_energy = 5.133
+distance_fade_enabled = true
+distance_fade_begin = 0.1
+omni_range = 1.181
+
+[node name="Light6" type="OmniLight3D" parent="bulbs/mid"]
+transform = Transform3D(0.453202, 0.665644, -0.0434714, 0.666425, -0.44951, 0.0646765, 0.0291533, -0.0722696, -0.802677, -0.0006233, 0.557008, 0.0400729)
+light_color = Color(0.436058, 8.66354e-07, 1.68458e-07, 1)
+light_energy = 5.133
+distance_fade_enabled = true
+distance_fade_begin = 0.1
+omni_range = 1.181
 
 [node name="Scoring Areas" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 9.31323e-10, 0, 1, 0, -9.31323e-10, 0, 1, 0, 0, 0)

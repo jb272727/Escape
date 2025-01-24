@@ -8,4 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var par = get_parent()
+	#print("PARENT SCALE: " + str(par.scale))

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b74nvkr5spldn"]
+
+[ext_resource type="Texture2D" uid="uid://cfykgocefimw0" path="res://assets/pipes and other physicals/Sign-0328.jpg" id="1_cvhjf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yy5p4"]
+albedo_texture = ExtResource("1_cvhjf")
+uv1_scale = Vector3(1.093, 2.043, 1.093)
+uv1_offset = Vector3(0.505, 0.495, 0)
+uv1_triplanar = true
+
+[node name="SV Sign" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.56, 0, 0, 0, 1.05, 0, 0, 0, 1.05, -0.0356152, 0.056366, -0.0159641)
+size = Vector3(0.872803, 0.481018, 0.0212154)
+material = SubResource("StandardMaterial3D_yy5p4")

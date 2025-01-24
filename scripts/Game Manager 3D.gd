@@ -56,7 +56,8 @@ func _process(delta):
 
 	var result = space.intersect_ray(rayQuery)
 	if result:
-		current_object = result.collider
+		if result is StaticBody3D:
+			current_object = result.collider
 		#if active_scene:
 			#active_scene.set_cursor_type(current_object) # use the set_cursor_type for the active scene
 	#print(result)

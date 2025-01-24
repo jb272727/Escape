@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://3cpwehj5vs54"]
+
+[ext_resource type="Texture2D" uid="uid://emb7i4oixfdc" path="res://assets/pipes and other physicals/Stack-machine_square.png" id="1_8n6cu"]
+
+[resource]
+resource_name = "Material.024"
+cull_mode = 2
+albedo_texture = ExtResource("1_8n6cu")
+roughness = 0.235537
+emission_enabled = true
+emission = Color(0, 0, 1, 1)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://lstp0176d02t"]
+
+[ext_resource type="Texture2D" uid="uid://cvduuxcknc788" path="res://assets/misc/KoreanSign_010.jpg" id="1_fchk6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65qg7"]
+albedo_texture = ExtResource("1_fchk6")
+
+[node name="korean_sign_3" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.227051, -0.0348759)
+size = Vector3(1, 0.545898, 0.0424805)
+material = SubResource("StandardMaterial3D_65qg7")

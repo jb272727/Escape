@@ -153,7 +153,6 @@ shadow_mesh = SubResource("ArrayMesh_fjnfs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0502417, 0.725055, 0)
 light_color = Color(0.651664, 0.64291, 0, 1)
 light_energy = 0.685
-distance_fade_enabled = true
 distance_fade_begin = 0.1
 omni_range = 0.275
 
