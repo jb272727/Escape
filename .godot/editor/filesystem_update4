@@ -1,5 +1,22 @@
-res://scenes/library.tscn
+res://scenes/arena.tscn
 res://assets/misc/gold.tres
 res://blue_mat_override_new.tres
 res://text_mat_glow.tres
 res://assets/library assets/mahogany-library.tres
+res://scenes/arena.gd
+res://scenes/main.tscn
+res://scenes/checker_white.tscn
+res://scenes/checker_black.tscn
+res://scenes/ankh.tscn
+res://scenes/artifact.tscn
+res://scenes/diamond.tscn
+res://scenes/jupiter.tscn
+res://scenes/mechanical_eye.tscn
+res://scenes/pyramid.tscn
+res://scenes/savior.tscn
+res://scenes/torii.tscn
+res://scenes/plunko.tscn
+res://scenes/stack.tscn
+res://scenes/library.tscn
+res://scenes/breathing.tscn
+res://scenes/hanoi_puzzle.tscn

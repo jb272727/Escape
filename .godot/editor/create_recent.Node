@@ -1,12 +1,12 @@
-SpotLight3D
 Node3D
-CSGBox3D
+SpotLight3D
+CollisionShape3D
+StaticBody3D
 Camera3D
+CSGBox3D
 OmniLight3D
 MeshInstance3D
 Timer
-CollisionShape3D
 Area3D
-StaticBody3D
 RigidBody3D
 AnimationPlayer

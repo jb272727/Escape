@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://uqvkemc8wrbo"]
+
+[ext_resource type="PackedScene" uid="uid://dqin41bjvwl" path="res://assets/Piece Assets/mechanical_eye.glb" id="1_5nc7a"]
+
+[node name="Mechanical_Eye" type="Node3D"]
+
+[node name="mechanical_eye" parent="." instance=ExtResource("1_5nc7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)

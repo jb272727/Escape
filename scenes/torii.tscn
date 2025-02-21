@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://hfn1sxkd52ju"]
+
+[ext_resource type="PackedScene" uid="uid://7hmqxy1h66iw" path="res://assets/Piece Assets/torii.glb" id="1_8qev1"]
+
+[node name="Torii" type="Node3D"]
+
+[node name="torii" parent="." instance=ExtResource("1_8qev1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)

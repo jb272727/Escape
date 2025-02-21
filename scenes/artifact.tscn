@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv1248wf4j3mh"]
+
+[ext_resource type="PackedScene" uid="uid://p8kj5j2vcl2t" path="res://assets/Piece Assets/artifact.glb" id="1_m217o"]
+
+[node name="Artifact" type="Node3D"]
+
+[node name="artifact" parent="." instance=ExtResource("1_m217o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)

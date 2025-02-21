@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5121gts313qo"]
+
+[ext_resource type="PackedScene" uid="uid://mqopi73wlctq" path="res://assets/Piece Assets/pyramid.glb" id="1_sp7ok"]
+
+[node name="Pyramid" type="Node3D"]
+
+[node name="pyramid" parent="." instance=ExtResource("1_sp7ok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)

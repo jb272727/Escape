@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ohub8vbwsdc"]
+
+[ext_resource type="PackedScene" uid="uid://vchvoi0cp4kf" path="res://assets/Piece Assets/savior.glb" id="1_ytog5"]
+
+[node name="Savior" type="Node3D"]
+
+[node name="savior" parent="." instance=ExtResource("1_ytog5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)

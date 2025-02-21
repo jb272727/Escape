@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b352waqrji6kv"]
+
+[ext_resource type="PackedScene" uid="uid://cvb8rwvlfrj1m" path="res://assets/Piece Assets/diamond.glb" id="1_v6g3a"]
+
+[node name="Diamond" type="Node3D"]
+
+[node name="diamond" parent="." instance=ExtResource("1_v6g3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
