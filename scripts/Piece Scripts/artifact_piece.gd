@@ -6,6 +6,7 @@ class_name ArtifactPiece
 func _ready():
 	super._ready()
 	model_scene = preload("res://scenes/artifact.tscn")
+	moves = [[1,1],[3,-1],[1,2]]
 	set_model_scene(model_scene)
 	print("Artifact piece is ready")
 
@@ -15,5 +16,5 @@ func _process(delta):
 	pass
 
 func compute_moves(current_pos):
-	super.compute_moves(current_pos)
+	return super.compute_moves(current_pos)
 	print("child computing moves for: ", self)

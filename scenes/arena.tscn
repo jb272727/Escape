@@ -38,82 +38,84 @@ script = ExtResource("1_xjlby")
 [node name="Positions To Move To" type="Node3D" parent="."]
 
 [node name="Row -1" type="Node3D" parent="Positions To Move To"]
+visible = false
 
 [node name="1,-1" type="Node3D" parent="Positions To Move To/Row -1"]
+visible = false
 
-[node name="1,0" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,0" type="Node3D" parent="Positions To Move To/Row -1"]
+visible = false
 
-[node name="1,1" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,1" type="Node3D" parent="Positions To Move To/Row -1"]
+visible = false
 
-[node name="checker black" parent="Positions To Move To/Row -1/1,1" instance=ExtResource("2_vwoy6")]
-
-[node name="1,2" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,2" type="Node3D" parent="Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+visible = false
 
-[node name="checker white" parent="Positions To Move To/Row -1/1,2" instance=ExtResource("3_kiemv")]
-
-[node name="1,3" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,3" type="Node3D" parent="Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+visible = false
 
-[node name="checker black" parent="Positions To Move To/Row -1/1,3" instance=ExtResource("2_vwoy6")]
-
-[node name="1,4" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,4" type="Node3D" parent="Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+visible = false
 
-[node name="checker white" parent="Positions To Move To/Row -1/1,4" instance=ExtResource("3_kiemv")]
-
-[node name="1,5" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,5" type="Node3D" parent="Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
-[node name="checker black" parent="Positions To Move To/Row -1/1,5" instance=ExtResource("2_vwoy6")]
-
-[node name="1,6" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,6" type="Node3D" parent="Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
-[node name="1,7" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,7" type="Node3D" parent="Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="Row 0" type="Node3D" parent="Positions To Move To"]
+visible = false
 
-[node name="1,-1" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,-1" type="Node3D" parent="Positions To Move To/Row 0"]
+visible = false
 
-[node name="1,0" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,0" type="Node3D" parent="Positions To Move To/Row 0"]
+visible = false
 
-[node name="1,1" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,1" type="Node3D" parent="Positions To Move To/Row 0"]
+visible = false
 
-[node name="checker black" parent="Positions To Move To/Row 0/1,1" instance=ExtResource("2_vwoy6")]
-
-[node name="1,2" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,2" type="Node3D" parent="Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+visible = false
 
-[node name="checker white" parent="Positions To Move To/Row 0/1,2" instance=ExtResource("3_kiemv")]
-
-[node name="1,3" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,3" type="Node3D" parent="Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+visible = false
 
-[node name="checker black" parent="Positions To Move To/Row 0/1,3" instance=ExtResource("2_vwoy6")]
-
-[node name="1,4" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,4" type="Node3D" parent="Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+visible = false
 
-[node name="checker white" parent="Positions To Move To/Row 0/1,4" instance=ExtResource("3_kiemv")]
-
-[node name="1,5" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,5" type="Node3D" parent="Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
-[node name="checker black" parent="Positions To Move To/Row 0/1,5" instance=ExtResource("2_vwoy6")]
-
-[node name="1,6" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,6" type="Node3D" parent="Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
-[node name="1,7" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,7" type="Node3D" parent="Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="Row 1" type="Node3D" parent="Positions To Move To"]
 
 [node name="1,-1" type="Node3D" parent="Positions To Move To/Row 1"]
+visible = false
 
 [node name="1,0" type="Node3D" parent="Positions To Move To/Row 1"]
+visible = false
 
 [node name="1,1" type="Node3D" parent="Positions To Move To/Row 1"]
 
@@ -141,16 +143,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
 [node name="1,6" type="Node3D" parent="Positions To Move To/Row 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="1,7" type="Node3D" parent="Positions To Move To/Row 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="Row 2" type="Node3D" parent="Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 
 [node name="2,-1" type="Node3D" parent="Positions To Move To/Row 2"]
+visible = false
 
 [node name="2,0" type="Node3D" parent="Positions To Move To/Row 2"]
+visible = false
 
 [node name="2,1" type="Node3D" parent="Positions To Move To/Row 2"]
 
@@ -178,16 +184,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
 [node name="2,6" type="Node3D" parent="Positions To Move To/Row 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="2,7" type="Node3D" parent="Positions To Move To/Row 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="Row 3" type="Node3D" parent="Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
 [node name="3,-1" type="Node3D" parent="Positions To Move To/Row 3"]
+visible = false
 
 [node name="3,0" type="Node3D" parent="Positions To Move To/Row 3"]
+visible = false
 
 [node name="3,1" type="Node3D" parent="Positions To Move To/Row 3"]
 
@@ -215,16 +225,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
 [node name="3,6" type="Node3D" parent="Positions To Move To/Row 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="3,7" type="Node3D" parent="Positions To Move To/Row 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="Row 4" type="Node3D" parent="Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
 
 [node name="4,-1" type="Node3D" parent="Positions To Move To/Row 4"]
+visible = false
 
 [node name="4,0" type="Node3D" parent="Positions To Move To/Row 4"]
+visible = false
 
 [node name="4,1" type="Node3D" parent="Positions To Move To/Row 4"]
 
@@ -252,16 +266,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
 [node name="4,6" type="Node3D" parent="Positions To Move To/Row 4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="4,7" type="Node3D" parent="Positions To Move To/Row 4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="Row 5" type="Node3D" parent="Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 
 [node name="5,-1" type="Node3D" parent="Positions To Move To/Row 5"]
+visible = false
 
 [node name="5,0" type="Node3D" parent="Positions To Move To/Row 5"]
+visible = false
 
 [node name="5,1" type="Node3D" parent="Positions To Move To/Row 5"]
 
@@ -289,83 +307,73 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
 [node name="5,6" type="Node3D" parent="Positions To Move To/Row 5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="5,7" type="Node3D" parent="Positions To Move To/Row 5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
 
 [node name="Row 6" type="Node3D" parent="Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+visible = false
 
-[node name="5,-1" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,-1" type="Node3D" parent="Positions To Move To/Row 6"]
+visible = false
 
-[node name="5,0" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,0" type="Node3D" parent="Positions To Move To/Row 6"]
+visible = false
 
-[node name="5,1" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,1" type="Node3D" parent="Positions To Move To/Row 6"]
+visible = false
 
-[node name="checker black" parent="Positions To Move To/Row 6/5,1" instance=ExtResource("2_vwoy6")]
+[node name="6,2" type="Node3D" parent="Positions To Move To/Row 6"]
+visible = false
 
-[node name="5,2" type="Node3D" parent="Positions To Move To/Row 6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+[node name="6,3" type="Node3D" parent="Positions To Move To/Row 6"]
+visible = false
 
-[node name="checker white" parent="Positions To Move To/Row 6/5,2" instance=ExtResource("3_kiemv")]
+[node name="6,4" type="Node3D" parent="Positions To Move To/Row 6"]
+visible = false
 
-[node name="5,3" type="Node3D" parent="Positions To Move To/Row 6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+[node name="6,5" type="Node3D" parent="Positions To Move To/Row 6"]
+visible = false
 
-[node name="checker black" parent="Positions To Move To/Row 6/5,3" instance=ExtResource("2_vwoy6")]
+[node name="6,6" type="Node3D" parent="Positions To Move To/Row 6"]
+visible = false
 
-[node name="5,4" type="Node3D" parent="Positions To Move To/Row 6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
-
-[node name="checker white" parent="Positions To Move To/Row 6/5,4" instance=ExtResource("3_kiemv")]
-
-[node name="5,5" type="Node3D" parent="Positions To Move To/Row 6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
-
-[node name="checker black" parent="Positions To Move To/Row 6/5,5" instance=ExtResource("2_vwoy6")]
-
-[node name="5,6" type="Node3D" parent="Positions To Move To/Row 6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
-
-[node name="5,7" type="Node3D" parent="Positions To Move To/Row 6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+[node name="6,7" type="Node3D" parent="Positions To Move To/Row 6"]
+visible = false
 
 [node name="Row 7" type="Node3D" parent="Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+visible = false
 
-[node name="5,-1" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,-1" type="Node3D" parent="Positions To Move To/Row 7"]
+visible = false
 
-[node name="5,0" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,0" type="Node3D" parent="Positions To Move To/Row 7"]
+visible = false
 
-[node name="5,1" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,1" type="Node3D" parent="Positions To Move To/Row 7"]
+visible = false
 
-[node name="checker black" parent="Positions To Move To/Row 7/5,1" instance=ExtResource("2_vwoy6")]
+[node name="7,2" type="Node3D" parent="Positions To Move To/Row 7"]
+visible = false
 
-[node name="5,2" type="Node3D" parent="Positions To Move To/Row 7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+[node name="7,3" type="Node3D" parent="Positions To Move To/Row 7"]
+visible = false
 
-[node name="checker white" parent="Positions To Move To/Row 7/5,2" instance=ExtResource("3_kiemv")]
+[node name="7,4" type="Node3D" parent="Positions To Move To/Row 7"]
+visible = false
 
-[node name="5,3" type="Node3D" parent="Positions To Move To/Row 7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+[node name="7,5" type="Node3D" parent="Positions To Move To/Row 7"]
+visible = false
 
-[node name="checker black" parent="Positions To Move To/Row 7/5,3" instance=ExtResource("2_vwoy6")]
+[node name="7,6" type="Node3D" parent="Positions To Move To/Row 7"]
+visible = false
 
-[node name="5,4" type="Node3D" parent="Positions To Move To/Row 7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
-
-[node name="checker white" parent="Positions To Move To/Row 7/5,4" instance=ExtResource("3_kiemv")]
-
-[node name="5,5" type="Node3D" parent="Positions To Move To/Row 7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
-
-[node name="checker black" parent="Positions To Move To/Row 7/5,5" instance=ExtResource("2_vwoy6")]
-
-[node name="5,6" type="Node3D" parent="Positions To Move To/Row 7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
-
-[node name="5,7" type="Node3D" parent="Positions To Move To/Row 7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+[node name="7,7" type="Node3D" parent="Positions To Move To/Row 7"]
+visible = false
 
 [node name="Viewer" type="Node3D" parent="."]
 
@@ -386,7 +394,7 @@ fov = 60.0
 [node name="env" type="Node3D" parent="."]
 
 [node name="shader" type="MeshInstance3D" parent="env"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7251, -3.26788, 2.87142)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7251, -57.9722, -49.8103)
 cast_shadow = 0
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_dp3lq")

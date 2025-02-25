@@ -15,5 +15,5 @@ func _process(delta):
 	pass
 
 func compute_moves(current_pos):
-	super.compute_moves(current_pos)
+	return super.compute_moves(current_pos)
 	print("child computing moves for: ", self)
