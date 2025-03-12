@@ -5,8 +5,9 @@ class_name ArtifactPiece
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()
+	value = 3
 	model_scene = preload("res://scenes/artifact.tscn")
-	moves = [[1,1],[3,-1],[1,2]]
+	moves = [[1,0],[0,-2],[0,2],[-1,0]]
 	set_model_scene(model_scene)
 	print("Artifact piece is ready")
 

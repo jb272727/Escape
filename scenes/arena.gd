@@ -54,6 +54,8 @@ func _ready():
 	friendly_pieces.append("SaviorPiece")
 	friendly_pieces.append("ArtifactPiece")
 	friendly_pieces.append("DiamondPiece")
+	
+	enemy_pieces.append("")
 	# @TODO initialize each piece to play in the game like:
 	#var pawn_instance = pawn_scene.instantiate() as PawnPiece
 	#add_child(pawn_instance)
@@ -97,57 +99,59 @@ func get_current_object() -> StaticBody3D:
 
 func _input(event):
 	if Input.is_action_just_pressed("lmb"):
-		if in_scene:
-			hit_object = %"Game Manager Library".get_current_object()
+		if not in_scene:
+			input_not_in_scene()
 		else:
-			hit_object = get_current_object()
-		if hit_object == null:
-			return
-		var coords = get_coords(hit_object)
-		if coords == null:
-			print("Tile is not valid")
-			return
-		var result = get_piece_at_coords(coords)     # result[i] is row and result[j] is column
+			hit_object = %"Game Manager Library".get_current_object()
+			print("hit_object ", hit_object)
+			if hit_object == null:
+				return
+			var coords = get_coords(hit_object)
+			print("coords ", coords)
+			if coords == null:
+				print("Tile is not valid")
+				return
+			var result = get_piece_at_coords(coords)     # result[i] is row and result[j] is column
 
-		# Getting a new piece
-		if is_picked == false:
-			selected_piece = result
-			if selected_piece == null:    
-				return
-			selected_coords = coords
-			display_valid_moves(selected_piece, selected_coords)
-			is_picked = true
-		else:    # Dropping a piece
-			# Can this piece move here?
-			var moveset = selected_piece.compute_moves(selected_coords)
-			if moveset != null:
-				for move in moveset:
-					#display_move(move)
-					if coords == move:
-						print("Moving " + str(selected_piece) + " to " + str(coords) + " from " + str(selected_coords))
-						var moving_result = move_piece(selected_coords, coords, selected_piece)
-						if moving_result == false:     # If the result matches, but we should be switching to a different piece, select that piece
-							selected_coords = coords
-							selected_piece = result
-							clear_checker_movesets()
-							display_valid_moves(selected_piece, selected_coords)
-							return
-						clear_checker_movesets()
-						is_picked = false
-						return
-			# If we selected a tile which cannot be reached, un-select it 
-			# | if we selected the tile of a different piece and that wasnt within the moveset, select that piece instead
-			if result != null:
-				selected_coords = coords
+			# Getting a new piece
+			if is_picked == false:
 				selected_piece = result
-				clear_checker_movesets()
+				if selected_piece == null:    
+					return
+				selected_coords = coords
 				display_valid_moves(selected_piece, selected_coords)
-				return
-			else:
-				clear_checker_movesets()
-				is_picked = false
-				selected_coords = [null,null]
-				selected_piece = null
+				is_picked = true
+			else:    # Dropping a piece
+				# Can this piece move here?
+				var moveset = selected_piece.compute_moves(selected_coords)
+				if moveset != null:
+					for move in moveset:
+						#display_move(move)
+						if coords == move:
+							print("Moving " + str(selected_piece) + " to " + str(coords) + " from " + str(selected_coords))
+							var moving_result = move_piece(selected_coords, coords, selected_piece)
+							if moving_result == false:     # If the result matches, but we should be switching to a different piece, select that piece
+								selected_coords = coords
+								selected_piece = result
+								clear_checker_movesets()
+								display_valid_moves(selected_piece, selected_coords)
+								return
+							clear_checker_movesets()
+							is_picked = false
+							return
+				# If we selected a tile which cannot be reached, un-select it 
+				# | if we selected the tile of a different piece and that wasnt within the moveset, select that piece instead
+				if result != null:
+					selected_coords = coords
+					selected_piece = result
+					clear_checker_movesets()
+					display_valid_moves(selected_piece, selected_coords)
+					return
+				else:
+					clear_checker_movesets()
+					is_picked = false
+					selected_coords = [null,null]
+					selected_piece = null
 
 
 func move_piece(from : Array, to : Array, piece : Node3D):
@@ -286,7 +290,56 @@ func map_piece(piece_name : String):
 
 
 
+func input_not_in_scene():
+		hit_object = get_current_object()
+		if hit_object == null:
+			return
+		var coords = get_coords(hit_object)
+		print("coords ", coords)
+		if coords == null:
+			print("Tile is not valid")
+			return
+		var result = get_piece_at_coords(coords)     # result[i] is row and result[j] is column
 
+		# Getting a new piece
+		if is_picked == false:
+			selected_piece = result
+			if selected_piece == null:    
+				return
+			selected_coords = coords
+			display_valid_moves(selected_piece, selected_coords)
+			is_picked = true
+		else:    # Dropping a piece
+			# Can this piece move here?
+			var moveset = selected_piece.compute_moves(selected_coords)
+			if moveset != null:
+				for move in moveset:
+					#display_move(move)
+					if coords == move:
+						print("Moving " + str(selected_piece) + " to " + str(coords) + " from " + str(selected_coords))
+						var moving_result = move_piece(selected_coords, coords, selected_piece)
+						if moving_result == false:     # If the result matches, but we should be switching to a different piece, select that piece
+							selected_coords = coords
+							selected_piece = result
+							clear_checker_movesets()
+							display_valid_moves(selected_piece, selected_coords)
+							return
+						clear_checker_movesets()
+						is_picked = false
+						return
+			# If we selected a tile which cannot be reached, un-select it 
+			# | if we selected the tile of a different piece and that wasnt within the moveset, select that piece instead
+			if result != null:
+				selected_coords = coords
+				selected_piece = result
+				clear_checker_movesets()
+				display_valid_moves(selected_piece, selected_coords)
+				return
+			else:
+				clear_checker_movesets()
+				is_picked = false
+				selected_coords = [null,null]
+				selected_piece = null
 
 
 func add_friendly_pieces_example():

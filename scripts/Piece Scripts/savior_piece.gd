@@ -5,6 +5,7 @@ class_name SaviorPiece
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()
+	value = 10
 	model_scene = preload("res://scenes/savior.tscn")
 	moves = [[1,0],[0,-1],[0,1],[-1,0]]
 	set_model_scene(model_scene)

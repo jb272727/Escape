@@ -9,7 +9,6 @@ cull_mode = 2
 specular_mode = 1
 albedo_texture = ExtResource("1_seos6")
 roughness = 0.0
-emission_enabled = true
 emission = Color(0.00493475, 0.228804, 0.999991, 1)
 emission_energy_multiplier = 6.53
 
@@ -93,6 +92,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
 
 [node name="dobj" type="MeshInstance3D" parent="diamond"]
 transform = Transform3D(1.57985, 0, 0, 0, 1.57985, 0, 0, 0, 1.57985, 0, 1.79074, 0)
+layers = 4
 mesh = SubResource("ArrayMesh_y1350")
 skeleton = NodePath("")
 
@@ -100,3 +100,9 @@ skeleton = NodePath("")
 transform = Transform3D(0.754987, 0, -0.655739, 0, 0.19798, 0, 0.655739, 0, 0.754987, 0, 0.143512, 0)
 mesh = SubResource("ArrayMesh_n1awj")
 skeleton = NodePath("")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5073, 3.53413, 1.44809)
+layers = 4
+light_cull_mask = 4294966276
+omni_range = 3.57774

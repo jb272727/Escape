@@ -5,6 +5,7 @@ class_name JupiterPiece
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()
+	value = 5
 	moves = [[1,-1],[1,1], [1,0], [0,-1], [0,1], [-1,-1], [-1,0], [-1, 1]]
 	model_scene = preload("res://scenes/jupiter.tscn")
 	set_model_scene(model_scene)

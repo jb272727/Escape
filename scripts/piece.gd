@@ -6,6 +6,7 @@ var moveset_pattern # The graphic
 var positions_to_move_node : Node3D
 var model_instance : Node3D
 var moves : Array   # Each move in moves is an array like (drow, dcol)
+var value : int = 1    # To be overriden in each piece script
 
 @export var model_scene : PackedScene
 
@@ -20,6 +21,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func get_piece_value() -> int:
+	return value
 
 func initialize_piece(position):
 	current_pos = position

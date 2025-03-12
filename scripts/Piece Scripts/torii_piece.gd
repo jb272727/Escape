@@ -5,6 +5,7 @@ class_name ToriiPiece
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()
+	value = 4
 	model_scene = preload("res://scenes/torii.tscn")
 	set_model_scene(model_scene)
 	print("torii piece is ready")

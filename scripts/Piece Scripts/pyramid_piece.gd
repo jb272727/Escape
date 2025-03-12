@@ -5,6 +5,7 @@ class_name PyramidPiece
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()
+	value = 2
 	model_scene = preload("res://scenes/pyramid.tscn")
 	set_model_scene(model_scene)
 	print("Pyramid piece is ready")

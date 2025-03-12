@@ -257,7 +257,7 @@ light_energy = 13.43
 shadow_enabled = true
 shadow_reverse_cull_face = true
 shadow_blur = 0.0
-omni_range = 13.3217
+omni_range = 23.089
 omni_attenuation = 1.8025
 
 [node name="Arena Wrapper" type="Node3D" parent="."]

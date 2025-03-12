@@ -5,6 +5,7 @@ class_name MechanicalEyePiece
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()
+	value = 5
 	model_scene = preload("res://scenes/mechanical_eye.tscn")
 	set_model_scene(model_scene)
 	print("MechanicalEyePiece piece is ready")

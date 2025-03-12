@@ -46,13 +46,14 @@ func _process(delta):
 	if result:
 		if result.collider is StaticBody3D:
 			current_object = result.collider
-	if !current_object:
-		pass
+	else:
+		current_object = null
+	#print(current_object)
+	#if !current_object:
+		#pass
 		#if active_scene:
 			#active_scene.set_cursor_type(current_object) # use the set_cursor_type for the active scene
 	#print(result)
-	if !current_object:
-		pass
 
 func get_current_object() -> StaticBody3D:
 	return current_object
