@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ixlldsklki8j"]
+
+[ext_resource type="Texture2D" uid="uid://qw8i5e0ubp6n" path="res://assets/Piece Assets/savior_seamless-1747011_1280.jpg" id="1_cchso"]
+
+[resource]
+resource_name = "Material.002"
+cull_mode = 2
+specular_mode = 1
+albedo_texture = ExtResource("1_cchso")
+roughness = 0.0

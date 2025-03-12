@@ -26,7 +26,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(lerped_variable)
 	if forward:
 		lerped_variable = lerp(lerped_variable, bone1_final.z, lerp_speed)
 		lerped_variable2 = lerp(lerped_variable2, bone2_final.z, lerp_speed)

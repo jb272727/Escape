@@ -1,8 +1,8 @@
 extends Node3D
 
-@onready var positions_to_move_to = $"Positions To Move To"
+@onready var positions_to_move_to = $"Arena To Scale/Positions To Move To"
 
-@onready var camera = $"Arena Test Camera"
+@onready var playing_camera = $"Arena To Scale/Arena Cameras/Playing Camera"
 var current_object : StaticBody3D
 var hit_object : StaticBody3D
 @onready var friendly = $Pieces/Friendly
@@ -10,8 +10,11 @@ var hit_object : StaticBody3D
 
 var friendly_pieces : Array
 var enemy_pieces : Array
+@export var camera : Camera3D
+@export var in_scene : bool = false
 @export var example_model_scene : PackedScene = preload("res://scenes/ankh.tscn")
 @export var checker_moveset_scene : PackedScene = preload("res://scenes/checker_moveset.tscn")
+
 
 # @TODO load all possible piece scripts here
 const ExamplePiece = preload("res://scripts/Piece Scripts/example_piece.gd")
@@ -35,6 +38,11 @@ var selected_coords : Array = [null,null]
 var is_picked : bool = false
 
 func _ready():
+	camera = playing_camera
+	#playing_camera.transform = self.transform
+	## Vector3(-1.413, 1.304, 0.75)
+	#playing_camera.position = playing_camera.position + Vector3(-1.413, 1.304, 0.75)
+	print(playing_camera.position)
 	for i in range(board_size + (board_buffer*2)): # Max board size of 7x7, board_size + board_buffer = 5 + 2 = 7
 		var row := []
 		for j in range(board_size + (board_buffer*2)):
@@ -63,23 +71,25 @@ func _ready():
 
 
 func _process(delta):
-	var mousePos = get_viewport().get_mouse_position()
-	#print(mousePos)
-	var rayLength = 100
-	var from = camera.project_ray_origin(mousePos)
-	var to = from + camera.project_ray_normal(mousePos) * rayLength
-	var space = get_world_3d().direct_space_state
-	var rayQuery = PhysicsRayQueryParameters3D.new()
-	rayQuery.from = from
-	rayQuery.to = to
-	rayQuery.collide_with_areas = true
-	rayQuery.collide_with_bodies = true  # Make sure to also collide with bodies if needed
+	if not in_scene:
+		var mousePos = get_viewport().get_mouse_position()
+		#print(mousePos)
+		var rayLength = 100
+		var from = camera.project_ray_origin(mousePos)
+		var to = from + camera.project_ray_normal(mousePos) * rayLength
+		var space = get_world_3d().direct_space_state
+		var rayQuery = PhysicsRayQueryParameters3D.new()
+		rayQuery.from = from
+		rayQuery.to = to
+		rayQuery.collide_with_areas = true
+		rayQuery.collide_with_bodies = true  # Make sure to also collide with bodies if needed
 
-	var result = space.intersect_ray(rayQuery)
-	if result:
-		current_object = result.collider
-	if !current_object:
-		pass
+		var result = space.intersect_ray(rayQuery)
+		if result:
+			if result is StaticBody3D:
+				current_object = result.collider
+		if !current_object:
+			pass
 
 
 func get_current_object() -> StaticBody3D:
@@ -87,13 +97,18 @@ func get_current_object() -> StaticBody3D:
 
 func _input(event):
 	if Input.is_action_just_pressed("lmb"):
-		hit_object = get_current_object()
+		if in_scene:
+			hit_object = %"Game Manager Library".get_current_object()
+		else:
+			hit_object = get_current_object()
+		if hit_object == null:
+			return
 		var coords = get_coords(hit_object)
 		if coords == null:
 			print("Tile is not valid")
+			return
 		var result = get_piece_at_coords(coords)     # result[i] is row and result[j] is column
 
-		print("selected piece:::!!!!! ", selected_piece)
 		# Getting a new piece
 		if is_picked == false:
 			selected_piece = result
@@ -108,13 +123,13 @@ func _input(event):
 			if moveset != null:
 				for move in moveset:
 					#display_move(move)
-					print("Move: ", move, " | coords clicked: ", coords)
 					if coords == move:
 						print("Moving " + str(selected_piece) + " to " + str(coords) + " from " + str(selected_coords))
 						var moving_result = move_piece(selected_coords, coords, selected_piece)
 						if moving_result == false:     # If the result matches, but we should be switching to a different piece, select that piece
 							selected_coords = coords
 							selected_piece = result
+							clear_checker_movesets()
 							display_valid_moves(selected_piece, selected_coords)
 							return
 						clear_checker_movesets()
@@ -134,18 +149,13 @@ func _input(event):
 				selected_coords = [null,null]
 				selected_piece = null
 
-		print("printing piece")
-		print_board()
-		print("=-------=------------=-----------=------------=--------=-----=")
 
 func move_piece(from : Array, to : Array, piece : Node3D):
 	var from_node = positions_to_move_to.get_child(from[0] + 1).get_child(from[1] + 1).get_child(1)
-	print(" From is ", from, " From node is ", from_node)
 	var to_node = positions_to_move_to.get_child(to[0] + 1).get_child(to[1] + 1).get_child(1)
 	var to_node_parent = positions_to_move_to.get_child(to[0] + 1).get_child(to[1] + 1)
 	assert(from_node != null, "From node should never be null")
 	if to_node != null:
-		print("There's a piece already here! ", to)
 		return false
 	else:
 		# Do dropping animation!!!!!!!!!!!!!
@@ -154,32 +164,28 @@ func move_piece(from : Array, to : Array, piece : Node3D):
 		piece.global_position = to_node_parent.global_position
 		return true
 		
-		#var global_position = child.get_global_position()
-		#new_parent.add_child(child)
-		#child.set_global_position(global_position)
 
-func display_move(move : Array, pos_node : Node3D):
-	var pos = pos_node.global_position
+func display_move(move : Array, row_node : Node3D, pos_node : Node3D):
+	var pos = pos_node.position
 	var moveset_scene_instance = checker_moveset_scene.instantiate()
-	moveset_scene_instance.global_position = pos
+	moveset_scene_instance.position = pos
 	
 	positions_to_move_to.add_child(moveset_scene_instance, true)
-	print("moveset_scene_instance global position: ", moveset_scene_instance.global_position, " ", moveset_scene_instance.position)
+	moveset_scene_instance.position.x += row_node.position.x
 	
 
 func display_valid_moves(piece : Node3D, position : Array):
 	var moves = piece.compute_moves(position)
-	print("Printing moves in display valid moves: ", moves)
 	for move in moves:
 		if !within_bounds(move):
 			continue
-		var pos_node = positions_to_move_to.get_child(move[0] + 1).get_child(move[1] + 1)
+		var row_node = positions_to_move_to.get_child(move[0] + 1)
+		var pos_node = row_node.get_child(move[1] + 1)
+		
 		if pos_node.visible == false:
-			print("!!!!!! Node is not visible!!!!!!!! ", pos_node)
 			continue
 		if pos_node.get_child_count() <= 1:  # if > 1 there's already a piece there.
-			print("Displaying move ", move, " with origin ", pos_node, " pos_node positon ", pos_node.global_position, " ", pos_node.position)
-			display_move(move, pos_node)
+			display_move(move, row_node, pos_node)
 		else:
 			print("Theres already a piece at ", pos_node)
 
@@ -191,11 +197,11 @@ func within_bounds(move : Array) -> bool:
 	return true
 
 func clear_checker_movesets():
-	print("Positions child count ", positions_to_move_to.get_child_count(), " Board total: ", board_total)
+	var count = 0
 	while positions_to_move_to.get_child_count() > board_total:
 		var moveset_child = positions_to_move_to.get_child(positions_to_move_to.get_child_count() - 1)
-		print("removing child ", moveset_child)
 		positions_to_move_to.remove_child(moveset_child)
+		count += 1
 
 
 func compute_valid_moves(piece : Node3D, position : Array):
@@ -217,7 +223,6 @@ func get_piece_at_coords(coords : Array):
 	if len(node_col.get_children()) > 2:
 		assert(len(node_col.get_children()) <= 2, "This node should never have more than two children")
 	else:
-		print("The piece found at coords", coords, " is ", node_col.get_child(1), " with parent ", node_col)
 		return node_col.get_child(1)    # We should always add the child as the second
 
 func add_friendly_pieces():

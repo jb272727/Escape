@@ -11,19 +11,17 @@ extends Area
 
 @onready var world_bottom = $"../walls/world bottom"
 
-var hit_object : CollisionObject3D = null
-var current_object : CollisionObject3D = null
+var hit_body : StaticBody3D
 var state : String = ""
 var board := []
 var board_current := []
 var empty_matrix := []
-var picked_collider : CollisionObject3D
+var picked_collider : StaticBody3D
 var chess_colliders := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	chess_colliders = [horse_collider, rook_collider, pawn_collider, bishop_collider]
-	camera = $"Chess cam"
 	var row = 0
 	for rows in $"board/Position Markers".get_children():
 		var arr = []
@@ -46,34 +44,29 @@ func _ready():
 	print("----------------------------")
 	print(board_current)
 	
-	add_neighbor($"change scene/main1", $"../Main Scene")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	current_object = %"Game Manager 3D".get_current_object()
-	if str(%"Game Manager 3D".active_scene) == str(get_path()):
-		set_cursor_type(current_object)
+	#current_object = %"Game Manager 3D".get_current_object()
+	#if str(%"Game Manager 3D".active_scene) == str(get_path()):
+		#set_cursor_type(current_object)
 	#print(current_object)
+	pass
 
 func _input(event):
 	if Input.is_action_just_pressed("lmb"):
-		hit_object = current_object
-		#print("state is " + str(state))
-		if %"Game Manager 3D".neighbor_scenes.has(hit_object): # Returns true if the dictionary contains an entry with the given key.
-			move_to_scene(hit_object)
-			pass
+		hit_body = %"Game Manager 3D".get_current_object()
+		print(hit_body)
 		if state == "":
-			hit_object = current_object
-			picked(hit_object)
+			picked(hit_body)
 		elif state == "picked": # dont update hit_object if we already have something picked
-			hit_object = current_object
 			drop()
 
 
 
-func picked(obj : CollisionObject3D):
-	#print("obj" + str(obj))
+func picked(obj : StaticBody3D):
+	print("obj: " + str(obj))
 	match obj:
 		horse_collider:
 			%"Game Manager 3D".play_audio("menuing")
@@ -100,7 +93,7 @@ func picked(obj : CollisionObject3D):
 			print("world")
 
 func drop():
-	var attempted_placement_collider := hit_object
+	var attempted_placement_collider := hit_body
 	match picked_collider: 
 		horse_collider:
 			var valid_spaces
@@ -271,21 +264,21 @@ func getEmptyMatrix() -> Array:
 			matrix[i].append(false)
 	return matrix
 
-func set_cursor_type(object : CollisionObject3D):
-	if state == "picked":
-		# show pick upo hand as cursor
-		#print("right cursor:    --  " + str(%"Game Manager 3D".right_cursor))
-		Input.set_custom_mouse_cursor(%"Game Manager 3D".grab_cursor, Input.CURSOR_ARROW)
-		return 0
-	elif object in chess_colliders:
-		# show pick upo hand as cursor
-		Input.set_custom_mouse_cursor(%"Game Manager 3D".hand_cursor, Input.CURSOR_ARROW)
-		return 0
-	elif object in neighbor_scenes:
-		Input.set_custom_mouse_cursor(%"Game Manager 3D".back_cursor, Input.CURSOR_ARROW)
-		return 0
-	else:
-		Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)
-		return 0
-	#etc
-	#etc
+#func set_cursor_type(object : CollisionObject3D):
+	#if state == "picked":
+		## show pick upo hand as cursor
+		##print("right cursor:    --  " + str(%"Game Manager 3D".right_cursor))
+		#Input.set_custom_mouse_cursor(%"Game Manager 3D".grab_cursor, Input.CURSOR_ARROW)
+		#return 0
+	#elif object in chess_colliders:
+		## show pick upo hand as cursor
+		#Input.set_custom_mouse_cursor(%"Game Manager 3D".hand_cursor, Input.CURSOR_ARROW)
+		#return 0
+	#elif object in neighbor_scenes:
+		#Input.set_custom_mouse_cursor(%"Game Manager 3D".back_cursor, Input.CURSOR_ARROW)
+		#return 0
+	#else:
+		#Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)
+		#return 0
+	##etc
+	##etc

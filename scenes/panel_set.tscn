@@ -36,6 +36,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cab66")
 
 [node name="Panel Set" type="Node3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Panel1" parent="." instance=ExtResource("1_2a7vp")]
 

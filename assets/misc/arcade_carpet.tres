@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ct1irl1p0iws5"]
+
+[ext_resource type="Texture2D" uid="uid://dus1wkoy8nd4o" path="res://assets/misc/arcade_carpet_1_512.png" id="1_klh73"]
+
+[resource]
+albedo_texture = ExtResource("1_klh73")
+uv1_scale = Vector3(-0.55, -0.55, -0.55)
+uv1_triplanar = true

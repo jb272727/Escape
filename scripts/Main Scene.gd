@@ -27,11 +27,3 @@ func _input(event):
 			move_to_scene(hit_object)
 			pass
 
-func set_cursor_type(object : CollisionObject3D):
-	if object in neighbor_scenes:
-		if object == chess_board:
-			Input.set_custom_mouse_cursor(%"Game Manager 3D".back_cursor, Input.CURSOR_ARROW)
-			return 0
-	else:
-		Input.set_custom_mouse_cursor(%"Game Manager 3D".right_cursor, Input.CURSOR_ARROW)
-		return 0

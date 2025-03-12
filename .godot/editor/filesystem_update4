@@ -1,4 +1,6 @@
+res://scripts/Door Camera.gd
 res://scenes/main.tscn
+res://assets/misc/arcade_carpet.tres
 res://assets/misc/gold.tres
 res://blue_mat_override_new.tres
 res://text_mat_glow.tres
@@ -6,6 +8,7 @@ res://assets/library assets/mahogany-library.tres
 res://scenes/arena.tscn
 res://scenes/checker_white.tscn
 res://scenes/checker_black.tscn
+res://scenes/checker_moveset.tscn
 res://scenes/ankh.tscn
 res://scenes/artifact.tscn
 res://scenes/diamond.tscn
@@ -19,7 +22,13 @@ res://scenes/stack.tscn
 res://scenes/library.tscn
 res://scenes/breathing.tscn
 res://scenes/hanoi_puzzle.tscn
+res://scenes/camera_switching_test_scene.tscn
+res://scenes/panel_set.tscn
+res://scenes/library_wall.tscn
+res://scripts/Game Manager Library.gd
+res://scripts/arena_library.gd
 res://scenes/arena.gd
-res://scripts/Piece Scripts/diamond_piece.gd
-res://scenes/checker_moveset.tscn
-res://scripts/piece.gd
+res://scripts/Entry Camera.gd
+res://scripts/Camera Class.gd
+res://scripts/Playing Camera.gd
+res://glow.tres

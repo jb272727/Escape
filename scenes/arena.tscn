@@ -1,10 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://saf26gond6bf"]
+[gd_scene load_steps=12 format=3 uid="uid://saf26gond6bf"]
 
 [ext_resource type="Script" path="res://scenes/arena.gd" id="1_xjlby"]
+[ext_resource type="Script" path="res://scripts/Playing Camera.gd" id="2_1gmpv"]
 [ext_resource type="PackedScene" uid="uid://bs6ykekgitafq" path="res://scenes/checker_black.tscn" id="2_vwoy6"]
 [ext_resource type="PackedScene" uid="uid://dplvy53lb78l1" path="res://scenes/checker_white.tscn" id="3_kiemv"]
 [ext_resource type="Script" path="res://scripts/piece.gd" id="4_0t505"]
 [ext_resource type="Shader" path="res://assets/usuable/psx_camera_shader.gdshader" id="5_86mec"]
+
+[sub_resource type="Gradient" id="Gradient_ve6rr"]
+offsets = PackedFloat32Array(0, 0.0205279)
+colors = PackedColorArray(0.252723, 0.00079151, 0.526882, 0, 0.760784, 0.470588, 1, 0.180392)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6ouiv"]
+gradient = SubResource("Gradient_ve6rr")
 
 [sub_resource type="QuadMesh" id="QuadMesh_dp3lq"]
 flip_faces = true
@@ -35,388 +43,414 @@ ambient_light_energy = 2.68
 [node name="Arena" type="Node3D"]
 script = ExtResource("1_xjlby")
 
-[node name="Positions To Move To" type="Node3D" parent="."]
+[node name="Arena To Scale" type="Node3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
-[node name="Row -1" type="Node3D" parent="Positions To Move To"]
+[node name="Arena Cameras" type="Node3D" parent="Arena To Scale"]
+
+[node name="Playing Camera" type="Camera3D" parent="Arena To Scale/Arena Cameras"]
+transform = Transform3D(-3.94019e-07, 4.32967, -9.0141, 1.89256e-07, 9.0141, 4.32967, 10, -1.77636e-14, -4.37114e-07, -14.1294, 13.0402, 7.5)
+fov = 60.0
+script = ExtResource("2_1gmpv")
+
+[node name="Control" type="Control" parent="Arena To Scale/Arena Cameras/Playing Camera"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="BottomRect" type="TextureRect" parent="Arena To Scale/Arena Cameras/Playing Camera/Control"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 422.0
+offset_right = 834.0
+offset_bottom = 539.0
+texture = SubResource("GradientTexture1D_6ouiv")
+
+[node name="Positions To Move To" type="Node3D" parent="Arena To Scale"]
+
+[node name="Row -1" type="Node3D" parent="Arena To Scale/Positions To Move To"]
 visible = false
 
-[node name="1,-1" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="1,-1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row -1"]
 visible = false
 
-[node name="-1,0" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,0" type="Node3D" parent="Arena To Scale/Positions To Move To/Row -1"]
 visible = false
 
-[node name="-1,1" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row -1"]
 visible = false
 
-[node name="-1,2" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,2" type="Node3D" parent="Arena To Scale/Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 visible = false
 
-[node name="-1,3" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,3" type="Node3D" parent="Arena To Scale/Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 visible = false
 
-[node name="-1,4" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,4" type="Node3D" parent="Arena To Scale/Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 visible = false
 
-[node name="-1,5" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,5" type="Node3D" parent="Arena To Scale/Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 visible = false
 
-[node name="-1,6" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,6" type="Node3D" parent="Arena To Scale/Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 visible = false
 
-[node name="-1,7" type="Node3D" parent="Positions To Move To/Row -1"]
+[node name="-1,7" type="Node3D" parent="Arena To Scale/Positions To Move To/Row -1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 visible = false
 
-[node name="Row 0" type="Node3D" parent="Positions To Move To"]
+[node name="Row 0" type="Node3D" parent="Arena To Scale/Positions To Move To"]
 visible = false
 
-[node name="0,-1" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,-1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 0"]
 visible = false
 
-[node name="0,0" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,0" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 0"]
 visible = false
 
-[node name="0,1" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 0"]
 visible = false
 
-[node name="0,2" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,2" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 visible = false
 
-[node name="0,3" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,3" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 visible = false
 
-[node name="0,4" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,4" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 visible = false
 
-[node name="0,5" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,5" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 visible = false
 
-[node name="0,6" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,6" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 visible = false
 
-[node name="0,7" type="Node3D" parent="Positions To Move To/Row 0"]
+[node name="0,7" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 visible = false
 
-[node name="Row 1" type="Node3D" parent="Positions To Move To"]
+[node name="Row 1" type="Node3D" parent="Arena To Scale/Positions To Move To"]
 
-[node name="1,-1" type="Node3D" parent="Positions To Move To/Row 1"]
+[node name="1,-1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 1"]
 visible = false
 
-[node name="1,0" type="Node3D" parent="Positions To Move To/Row 1"]
+[node name="1,0" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 1"]
 visible = false
 
-[node name="1,1" type="Node3D" parent="Positions To Move To/Row 1"]
+[node name="1,1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 1"]
 
-[node name="checker black" parent="Positions To Move To/Row 1/1,1" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 1/1,1" instance=ExtResource("2_vwoy6")]
 
-[node name="1,2" type="Node3D" parent="Positions To Move To/Row 1"]
+[node name="1,2" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="checker white" parent="Positions To Move To/Row 1/1,2" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 1/1,2" instance=ExtResource("3_kiemv")]
 
-[node name="1,3" type="Node3D" parent="Positions To Move To/Row 1"]
+[node name="1,3" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
-[node name="checker black" parent="Positions To Move To/Row 1/1,3" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 1/1,3" instance=ExtResource("2_vwoy6")]
 
-[node name="1,4" type="Node3D" parent="Positions To Move To/Row 1"]
+[node name="1,4" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
-[node name="checker white" parent="Positions To Move To/Row 1/1,4" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 1/1,4" instance=ExtResource("3_kiemv")]
 
-[node name="1,5" type="Node3D" parent="Positions To Move To/Row 1"]
+[node name="1,5" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
-[node name="checker black" parent="Positions To Move To/Row 1/1,5" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 1/1,5" instance=ExtResource("2_vwoy6")]
 
-[node name="1,6" type="Node3D" parent="Positions To Move To/Row 1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
-visible = false
-
-[node name="1,7" type="Node3D" parent="Positions To Move To/Row 1"]
+[node name="1,6" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 visible = false
 
-[node name="Row 2" type="Node3D" parent="Positions To Move To"]
+[node name="1,7" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
+
+[node name="Row 2" type="Node3D" parent="Arena To Scale/Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 
-[node name="2,-1" type="Node3D" parent="Positions To Move To/Row 2"]
+[node name="2,-1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 2"]
 visible = false
 
-[node name="2,0" type="Node3D" parent="Positions To Move To/Row 2"]
+[node name="2,0" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 2"]
 visible = false
 
-[node name="2,1" type="Node3D" parent="Positions To Move To/Row 2"]
+[node name="2,1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 2"]
 
-[node name="checker white" parent="Positions To Move To/Row 2/2,1" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 2/2,1" instance=ExtResource("3_kiemv")]
 
-[node name="2,2" type="Node3D" parent="Positions To Move To/Row 2"]
+[node name="2,2" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="checker black" parent="Positions To Move To/Row 2/2,2" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 2/2,2" instance=ExtResource("2_vwoy6")]
 
-[node name="2,3" type="Node3D" parent="Positions To Move To/Row 2"]
+[node name="2,3" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
-[node name="checker white" parent="Positions To Move To/Row 2/2,3" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 2/2,3" instance=ExtResource("3_kiemv")]
 
-[node name="2,4" type="Node3D" parent="Positions To Move To/Row 2"]
+[node name="2,4" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
-[node name="checker black" parent="Positions To Move To/Row 2/2,4" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 2/2,4" instance=ExtResource("2_vwoy6")]
 
-[node name="2,5" type="Node3D" parent="Positions To Move To/Row 2"]
+[node name="2,5" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
-[node name="checker white" parent="Positions To Move To/Row 2/2,5" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 2/2,5" instance=ExtResource("3_kiemv")]
 
-[node name="2,6" type="Node3D" parent="Positions To Move To/Row 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
-visible = false
-
-[node name="2,7" type="Node3D" parent="Positions To Move To/Row 2"]
+[node name="2,6" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 visible = false
 
-[node name="Row 3" type="Node3D" parent="Positions To Move To"]
+[node name="2,7" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
+
+[node name="Row 3" type="Node3D" parent="Arena To Scale/Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
-[node name="3,-1" type="Node3D" parent="Positions To Move To/Row 3"]
+[node name="3,-1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 3"]
 visible = false
 
-[node name="3,0" type="Node3D" parent="Positions To Move To/Row 3"]
+[node name="3,0" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 3"]
 visible = false
 
-[node name="3,1" type="Node3D" parent="Positions To Move To/Row 3"]
+[node name="3,1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 3"]
 
-[node name="checker black" parent="Positions To Move To/Row 3/3,1" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 3/3,1" instance=ExtResource("2_vwoy6")]
 
-[node name="3,2" type="Node3D" parent="Positions To Move To/Row 3"]
+[node name="3,2" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="checker white" parent="Positions To Move To/Row 3/3,2" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 3/3,2" instance=ExtResource("3_kiemv")]
 
-[node name="3,3" type="Node3D" parent="Positions To Move To/Row 3"]
+[node name="3,3" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
-[node name="checker black" parent="Positions To Move To/Row 3/3,3" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 3/3,3" instance=ExtResource("2_vwoy6")]
 
-[node name="3,4" type="Node3D" parent="Positions To Move To/Row 3"]
+[node name="3,4" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
-[node name="checker white" parent="Positions To Move To/Row 3/3,4" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 3/3,4" instance=ExtResource("3_kiemv")]
 
-[node name="3,5" type="Node3D" parent="Positions To Move To/Row 3"]
+[node name="3,5" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
-[node name="checker black" parent="Positions To Move To/Row 3/3,5" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 3/3,5" instance=ExtResource("2_vwoy6")]
 
-[node name="3,6" type="Node3D" parent="Positions To Move To/Row 3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
-visible = false
-
-[node name="3,7" type="Node3D" parent="Positions To Move To/Row 3"]
+[node name="3,6" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 visible = false
 
-[node name="Row 4" type="Node3D" parent="Positions To Move To"]
+[node name="3,7" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
+
+[node name="Row 4" type="Node3D" parent="Arena To Scale/Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
 
-[node name="4,-1" type="Node3D" parent="Positions To Move To/Row 4"]
+[node name="4,-1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 4"]
 visible = false
 
-[node name="4,0" type="Node3D" parent="Positions To Move To/Row 4"]
+[node name="4,0" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 4"]
 visible = false
 
-[node name="4,1" type="Node3D" parent="Positions To Move To/Row 4"]
+[node name="4,1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 4"]
 
-[node name="checker white" parent="Positions To Move To/Row 4/4,1" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 4/4,1" instance=ExtResource("3_kiemv")]
 
-[node name="4,2" type="Node3D" parent="Positions To Move To/Row 4"]
+[node name="4,2" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="checker black" parent="Positions To Move To/Row 4/4,2" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 4/4,2" instance=ExtResource("2_vwoy6")]
 
-[node name="4,3" type="Node3D" parent="Positions To Move To/Row 4"]
+[node name="4,3" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
-[node name="checker white" parent="Positions To Move To/Row 4/4,3" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 4/4,3" instance=ExtResource("3_kiemv")]
 
-[node name="4,4" type="Node3D" parent="Positions To Move To/Row 4"]
+[node name="4,4" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
-[node name="checker black" parent="Positions To Move To/Row 4/4,4" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 4/4,4" instance=ExtResource("2_vwoy6")]
 
-[node name="4,5" type="Node3D" parent="Positions To Move To/Row 4"]
+[node name="4,5" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
-[node name="checker white" parent="Positions To Move To/Row 4/4,5" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 4/4,5" instance=ExtResource("3_kiemv")]
 
-[node name="4,6" type="Node3D" parent="Positions To Move To/Row 4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
-visible = false
-
-[node name="4,7" type="Node3D" parent="Positions To Move To/Row 4"]
+[node name="4,6" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 visible = false
 
-[node name="Row 5" type="Node3D" parent="Positions To Move To"]
+[node name="4,7" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
+
+[node name="Row 5" type="Node3D" parent="Arena To Scale/Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 
-[node name="5,-1" type="Node3D" parent="Positions To Move To/Row 5"]
+[node name="5,-1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 5"]
 visible = false
 
-[node name="5,0" type="Node3D" parent="Positions To Move To/Row 5"]
+[node name="5,0" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 5"]
 visible = false
 
-[node name="5,1" type="Node3D" parent="Positions To Move To/Row 5"]
+[node name="5,1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 5"]
 
-[node name="checker black" parent="Positions To Move To/Row 5/5,1" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 5/5,1" instance=ExtResource("2_vwoy6")]
 
-[node name="5,2" type="Node3D" parent="Positions To Move To/Row 5"]
+[node name="5,2" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="checker white" parent="Positions To Move To/Row 5/5,2" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 5/5,2" instance=ExtResource("3_kiemv")]
 
-[node name="5,3" type="Node3D" parent="Positions To Move To/Row 5"]
+[node name="5,3" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
-[node name="checker black" parent="Positions To Move To/Row 5/5,3" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 5/5,3" instance=ExtResource("2_vwoy6")]
 
-[node name="5,4" type="Node3D" parent="Positions To Move To/Row 5"]
+[node name="5,4" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
-[node name="checker white" parent="Positions To Move To/Row 5/5,4" instance=ExtResource("3_kiemv")]
+[node name="checker white" parent="Arena To Scale/Positions To Move To/Row 5/5,4" instance=ExtResource("3_kiemv")]
 
-[node name="5,5" type="Node3D" parent="Positions To Move To/Row 5"]
+[node name="5,5" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
-[node name="checker black" parent="Positions To Move To/Row 5/5,5" instance=ExtResource("2_vwoy6")]
+[node name="checker black" parent="Arena To Scale/Positions To Move To/Row 5/5,5" instance=ExtResource("2_vwoy6")]
 
-[node name="5,6" type="Node3D" parent="Positions To Move To/Row 5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
-visible = false
-
-[node name="5,7" type="Node3D" parent="Positions To Move To/Row 5"]
+[node name="5,6" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 visible = false
 
-[node name="Row 6" type="Node3D" parent="Positions To Move To"]
+[node name="5,7" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+visible = false
+
+[node name="Row 6" type="Node3D" parent="Arena To Scale/Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 visible = false
 
-[node name="6,-1" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,-1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 6"]
 visible = false
 
-[node name="6,0" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,0" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 6"]
 visible = false
 
-[node name="6,1" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 6"]
 visible = false
 
-[node name="6,2" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,2" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 6"]
 visible = false
 
-[node name="6,3" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,3" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 6"]
 visible = false
 
-[node name="6,4" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,4" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 6"]
 visible = false
 
-[node name="6,5" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,5" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 6"]
 visible = false
 
-[node name="6,6" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,6" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 6"]
 visible = false
 
-[node name="6,7" type="Node3D" parent="Positions To Move To/Row 6"]
+[node name="6,7" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 6"]
 visible = false
 
-[node name="Row 7" type="Node3D" parent="Positions To Move To"]
+[node name="Row 7" type="Node3D" parent="Arena To Scale/Positions To Move To"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 visible = false
 
-[node name="7,-1" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,-1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 7"]
 visible = false
 
-[node name="7,0" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,0" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 7"]
 visible = false
 
-[node name="7,1" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,1" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 7"]
 visible = false
 
-[node name="7,2" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,2" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 7"]
 visible = false
 
-[node name="7,3" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,3" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 7"]
 visible = false
 
-[node name="7,4" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,4" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 7"]
 visible = false
 
-[node name="7,5" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,5" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 7"]
 visible = false
 
-[node name="7,6" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,6" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 7"]
 visible = false
 
-[node name="7,7" type="Node3D" parent="Positions To Move To/Row 7"]
+[node name="7,7" type="Node3D" parent="Arena To Scale/Positions To Move To/Row 7"]
 visible = false
 
-[node name="Viewer" type="Node3D" parent="."]
+[node name="Pieces" type="Node3D" parent="Arena To Scale"]
 
-[node name="Pieces" type="Node3D" parent="."]
+[node name="Friendly" type="Node3D" parent="Arena To Scale/Pieces"]
 
-[node name="Friendly" type="Node3D" parent="Pieces"]
+[node name="Enemy" type="Node3D" parent="Arena To Scale/Pieces"]
 
-[node name="Enemy" type="Node3D" parent="Pieces"]
-
-[node name="Test Piece" type="Node3D" parent="Pieces"]
+[node name="Test Piece" type="Node3D" parent="Arena To Scale/Pieces"]
 script = ExtResource("4_0t505")
 
-[node name="Arena Test Camera" type="Camera3D" parent="."]
-transform = Transform3D(-3.94019e-08, 0.432967, -0.90141, 1.89256e-08, 0.90141, 0.432967, 1, 0, -4.37114e-08, -8.47594, 9.08092, 7.73162)
-current = true
-fov = 60.0
+[node name="Light env" type="Node" parent="Arena To Scale"]
 
-[node name="env" type="Node3D" parent="."]
-
-[node name="shader" type="MeshInstance3D" parent="env"]
+[node name="shader" type="MeshInstance3D" parent="Arena To Scale/Light env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7251, -57.9722, -49.8103)
+visible = false
 cast_shadow = 0
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_dp3lq")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_rlo55")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
-environment = SubResource("Environment_ofw0t")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="env"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Arena To Scale/Light env"]
 transform = Transform3D(1, 0, 0, 0, -0.0185343, 0.999828, 0, -0.999828, -0.0185343, 7.38844, 12.629, 7.53931)
+visible = false
 shadow_enabled = true
 spot_range = 47.554
 spot_attenuation = 0.239876
 spot_angle = 46.0388
 spot_angle_attenuation = 0.34151
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="env"]
-transform = Transform3D(0.00209434, 0.592012, -0.805927, 0, 0.805928, 0.592013, 0.999998, -0.00123988, 0.00168789, -12.6461, 16.8799, 6.27588)
+[node name="SpotLight3D2" type="SpotLight3D" parent="Arena To Scale/Light env"]
+transform = Transform3D(0.00209434, 0.592012, -0.805926, 0, 0.805928, 0.592013, 0.999998, -0.00123988, 0.00168789, -12.6461, 16.8799, 6.27588)
+visible = false
 light_energy = 3.166
 shadow_enabled = true
 spot_range = 95.108
 spot_attenuation = 1.02837
 spot_angle = 46.0388
 spot_angle_attenuation = 0.707107
+
+[node name="env" type="Node3D" parent="Arena To Scale"]
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Arena To Scale/env"]
+environment = SubResource("Environment_ofw0t")
+
+[connection signal="gui_input" from="Arena To Scale/Arena Cameras/Playing Camera/Control/BottomRect" to="Arena To Scale/Arena Cameras/Playing Camera" method="_on_bottom_rect_gui_input"]

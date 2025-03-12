@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://tw32hdhpet4v"]
+
+[ext_resource type="PackedScene" uid="uid://dfllm5fhuweay" path="res://scenes/panel_set.tscn" id="1_msmr0"]
+[ext_resource type="PackedScene" uid="uid://c6yvwfmiw8fpt" path="res://scenes/pillar.tscn" id="2_0opeb"]
+[ext_resource type="PackedScene" uid="uid://op3j012tkde4" path="res://scenes/pillar_top.tscn" id="3_68xd4"]
+[ext_resource type="Texture2D" uid="uid://dbb8qwu8xypbr" path="res://scripts/wallpaper1.png" id="4_4wkb8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4qif"]
+albedo_texture = ExtResource("4_4wkb8")
+uv1_scale = Vector3(21.015, 8.345, 24.635)
+
+[sub_resource type="QuadMesh" id="QuadMesh_73t5n"]
+material = SubResource("StandardMaterial3D_i4qif")
+size = Vector2(9.615, 7.855)
+
+[node name="Library Wall" type="Node3D"]
+
+[node name="Panel Set5" parent="." instance=ExtResource("1_msmr0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12.1287, 0, 0)
+
+[node name="Panel Set6" parent="." instance=ExtResource("1_msmr0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.3826, 0, 0)
+
+[node name="Pillar" parent="." instance=ExtResource("2_0opeb")]
+transform = Transform3D(0.209597, 0, 0, 0, 3.90772, 0, 0, 0, 0.209597, -0.40177, 3.892, -0.117395)
+
+[node name="Pillar Top" parent="Pillar" instance=ExtResource("3_68xd4")]
+transform = Transform3D(2.26785, 0, 0, 0, 0.0543706, 0, 0, 0, 2.26785, 0, 0.947355, 0)
+
+[node name="Pillar4" parent="." instance=ExtResource("2_0opeb")]
+transform = Transform3D(0.209597, 0, 0, 0, 3.90772, 0, 0, 0, 0.209597, 9.0445, 3.892, -0.117395)
+
+[node name="Pillar Top" parent="Pillar4" instance=ExtResource("3_68xd4")]
+transform = Transform3D(2.26785, 0, 0, 0, 0.0543706, 0, 0, 0, 2.26785, 0, 0.947355, 0)
+
+[node name="Pillar2" parent="." instance=ExtResource("2_0opeb")]
+transform = Transform3D(-9.16178e-09, -3.90772, 0, 0.209597, -1.70812e-07, 0, 0, 0, 0.209597, 3.44742, 8.00408, -0.117395)
+
+[node name="Pillar3" parent="." instance=ExtResource("2_0opeb")]
+transform = Transform3D(-9.16178e-09, -3.90772, 0, 0.209597, -1.70812e-07, 0, 0, 0, 0.209597, 5.56294, 8.00408, -0.117395)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.3198, 3.9651, 0.0586934)
+mesh = SubResource("QuadMesh_73t5n")

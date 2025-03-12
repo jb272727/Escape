@@ -51,25 +51,24 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var mousePos = get_viewport().get_mouse_position()
-	var rayLength = 100
-	var from = camera.project_ray_origin(mousePos)
-	var to = from + camera.project_ray_normal(mousePos) * rayLength
-	var space = get_world_3d().direct_space_state
-	var rayQuery = PhysicsRayQueryParameters3D.new()
-	rayQuery.from = from
-	rayQuery.to = to
-	rayQuery.collide_with_areas = true
-	rayQuery.collide_with_bodies = true  # Make sure to also collide with bodies if needed
-
-	var result = space.intersect_ray(rayQuery)
-	if result:
-		current_object = result.collider
-		#if active_scene:
-			#active_scene.set_cursor_type(current_object) # use the set_cursor_type for the active scene
-	#print(result)
-	if !current_object:
-		pass
+	#var mousePos = get_viewport().get_mouse_position()
+	#var rayLength = 100
+	#var from = camera.project_ray_origin(mousePos)
+	#var to = from + camera.project_ray_normal(mousePos) * rayLength
+	#var space = get_world_3d().direct_space_state
+	#var rayQuery = PhysicsRayQueryParameters3D.new()
+	#rayQuery.from = from
+	#rayQuery.to = to
+	#rayQuery.collide_with_areas = true
+	#rayQuery.collide_with_bodies = true  # Make sure to also collide with bodies if needed
+#
+	#var result = space.intersect_ray(rayQuery)
+	#if result:
+		#current_object = result.collider
+		##if active_scene:
+			##active_scene.set_cursor_type(current_object) # use the set_cursor_type for the active scene
+	##print(result)
+	#if !current_object:
 		
 	hanoi_process(delta)
 	
