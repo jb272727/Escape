@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d2qhxwhsoqnjj"]
+[gd_scene load_steps=26 format=3 uid="uid://d2qhxwhsoqnjj"]
 
 [ext_resource type="Texture2D" uid="uid://dmh7ryttqfwmm" path="res://assets/Piece Assets/jupiter_2k_jupiter.jpg" id="1_blg3a"]
 [ext_resource type="Texture2D" uid="uid://c2gks76v25yqe" path="res://assets/Piece Assets/jupiter_ganymede.jpg" id="2_i8sys"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://siygxn2e5vko" path="res://assets/Piece Assets/jupiter_io.jpg" id="4_tntoa"]
 [ext_resource type="Texture2D" uid="uid://bxtkgxisv8cg7" path="res://assets/Piece Assets/jupiter_europa.jpg" id="5_kp2rk"]
 [ext_resource type="Texture2D" uid="uid://dtidl6vrltnus" path="res://assets/Piece Assets/jupiter_seamless-1747011_1280.jpg" id="6_jybm8"]
+[ext_resource type="Material" uid="uid://d385ia65gq0qm" path="res://blue_marble.tres" id="6_y1767"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wi27u"]
 resource_name = "Material"
@@ -279,5 +280,6 @@ skeleton = NodePath("")
 
 [node name="Cylinder_010" type="MeshInstance3D" parent="jupiter"]
 transform = Transform3D(0.754987, 0, -0.655739, 0, 0.19798, 0, 0.655739, 0, 0.754987, 0, 0.143512, 0)
+material_override = ExtResource("6_y1767")
 mesh = SubResource("ArrayMesh_thuc4")
 skeleton = NodePath("")

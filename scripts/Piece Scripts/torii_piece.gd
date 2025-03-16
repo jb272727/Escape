@@ -4,11 +4,11 @@ class_name ToriiPiece
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	super._ready()
 	value = 4
+	moves = [[1,0],[2,0],[-1,0]]
 	model_scene = preload("res://scenes/torii.tscn")
 	set_model_scene(model_scene)
-	print("torii piece is ready")
+	super._ready()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

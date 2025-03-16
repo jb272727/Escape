@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://u6v1tiwvc6ih"]
+
+[ext_resource type="Script" path="res://scripts/action test.gd" id="1_15mpc"]
+
+[node name="action test" type="Node3D"]
+script = ExtResource("1_15mpc")

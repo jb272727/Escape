@@ -52,7 +52,7 @@ func _process(delta):
 	#if !current_object:
 		#pass
 		#if active_scene:
-			#active_scene.set_cursor_type(current_object) # use the set_cursor_type for the active scene
+			#active_scene.set_curso r_type(current_object) # use the set_cursor_type for the active scene
 	#print(result)
 
 func get_current_object() -> StaticBody3D:

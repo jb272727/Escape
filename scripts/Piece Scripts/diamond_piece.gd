@@ -4,12 +4,11 @@ class_name DiamondPiece
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	super._ready()
 	value = 3
 	model_scene = preload("res://scenes/diamond.tscn")
 	moves = [[1,-1],[1,0],[1,1],[-1,0]]
 	set_model_scene(model_scene)
-	print("dia piece is ready")
+	super._ready()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

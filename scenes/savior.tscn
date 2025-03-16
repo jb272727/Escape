@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3ohub8vbwsdc"]
+[gd_scene load_steps=14 format=3 uid="uid://b3ohub8vbwsdc"]
 
 [ext_resource type="Material" uid="uid://ixlldsklki8j" path="res://glow.tres" id="1_3gshc"]
+[ext_resource type="Material" uid="uid://d385ia65gq0qm" path="res://blue_marble.tres" id="1_o2u2q"]
 [ext_resource type="Texture2D" uid="uid://qw8i5e0ubp6n" path="res://assets/Piece Assets/savior_seamless-1747011_1280.jpg" id="2_cdp6d"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bai02"]
@@ -161,23 +162,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
 
 [node name="Cylinder_006" type="MeshInstance3D" parent="savior"]
 transform = Transform3D(0.754987, 0, -0.655739, 0, 0.19798, 0, 0.655739, 0, 0.754987, -0.0224507, 0.143512, 0.000795364)
+material_override = ExtResource("1_o2u2q")
 mesh = SubResource("ArrayMesh_vw1ah")
 skeleton = NodePath("")
 
 [node name="Cube" type="MeshInstance3D" parent="savior"]
 transform = Transform3D(-0.194818, -0.45059, 0.451829, 0, -1.23502, -0.428787, -0.153963, 0.570155, -0.571722, -0.546317, 2.68684, 0.430975)
 layers = 2
+material_override = ExtResource("1_o2u2q")
 mesh = SubResource("ArrayMesh_3mcab")
 skeleton = NodePath("")
 
 [node name="Cube_006" type="MeshInstance3D" parent="savior"]
 transform = Transform3D(0.192974, -0.457334, 0.458591, 0, -1.23502, -0.428787, -0.156267, -0.56476, 0.566312, -0.515901, 2.68684, -0.40663)
 layers = 2
+material_override = ExtResource("1_o2u2q")
 mesh = SubResource("ArrayMesh_r7fec")
 skeleton = NodePath("")
 
 [node name="Cube_005" type="MeshInstance3D" parent="savior"]
 transform = Transform3D(0.754987, 0, -0.655739, 0, 1, 0, 0.655739, 0, 0.754987, -0.16081, 2.16389, -0.119375)
+material_override = ExtResource("1_o2u2q")
 mesh = SubResource("ArrayMesh_bu6p7")
 skeleton = NodePath("")
 

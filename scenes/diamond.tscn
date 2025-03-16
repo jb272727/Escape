@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b352waqrji6kv"]
+[gd_scene load_steps=10 format=3 uid="uid://b352waqrji6kv"]
 
 [ext_resource type="Texture2D" uid="uid://41lobla0yt4n" path="res://assets/Piece Assets/diamond_seamless-1747011_1280.jpg" id="1_f4gu2"]
 [ext_resource type="Texture2D" uid="uid://qw8i5e0ubp6n" path="res://assets/Piece Assets/savior_seamless-1747011_1280.jpg" id="1_seos6"]
+[ext_resource type="Material" uid="uid://d385ia65gq0qm" path="res://blue_marble.tres" id="2_nqjfg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1wp4"]
 resource_name = "Material.002"
@@ -98,6 +99,7 @@ skeleton = NodePath("")
 
 [node name="Cylinder_018" type="MeshInstance3D" parent="diamond"]
 transform = Transform3D(0.754987, 0, -0.655739, 0, 0.19798, 0, 0.655739, 0, 0.754987, 0, 0.143512, 0)
+material_override = ExtResource("2_nqjfg")
 mesh = SubResource("ArrayMesh_n1awj")
 skeleton = NodePath("")
 

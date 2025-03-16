@@ -1,42 +1,29 @@
 res://scenes/main.tscn
+res://blue_marble.tres
+res://red_marble.tres
+res://glow.tres
 res://assets/misc/arcade_carpet.tres
 res://assets/misc/gold.tres
 res://blue_mat_override_new.tres
 res://text_mat_glow.tres
 res://assets/library assets/mahogany-library.tres
-res://glow.tres
+res://library_wallpaper_mat.tres
 res://scenes/library.tscn
 res://scenes/arena.tscn
-res://scenes/library_wall.tscn
-res://scenes/panel_set.tscn
-res://scenes/checker_white.tscn
 res://scenes/checker_black.tscn
 res://scenes/checker_moveset.tscn
+res://scenes/checker_opponent_moveset.tscn
 res://scenes/ankh.tscn
 res://scenes/artifact.tscn
-res://scenes/diamond.tscn
 res://scenes/jupiter.tscn
 res://scenes/mechanical_eye.tscn
 res://scenes/pyramid.tscn
 res://scenes/savior.tscn
-res://scenes/torii.tscn
 res://scenes/plunko.tscn
-res://scenes/stack.tscn
-res://scenes/breathing.tscn
 res://scenes/hanoi_puzzle.tscn
 res://scenes/camera_switching_test_scene.tscn
-res://scenes/arena.gd
-res://scripts/Entry Camera.gd
-res://scripts/Game Manager Library.gd
-res://scripts/Piece Scripts/artifact_piece.gd
-res://scenes/checker_opponent_moveset.tscn
-res://scripts/Action.gd
-res://scripts/Board State.gd
-res://scripts/piece.gd
-res://scripts/Piece Scripts/ankh_piece.gd
-res://scripts/Piece Scripts/diamond_piece.gd
-res://scripts/Piece Scripts/jupiter_piece.gd
-res://scripts/Piece Scripts/mechanical_eye_piece.gd
-res://scripts/Piece Scripts/pyramid_piece.gd
-res://scripts/Piece Scripts/savior_piece.gd
-res://scripts/Piece Scripts/torii_piece.gd
+res://scenes/library_wall.tscn
+res://scenes/diamond.tscn
+res://scenes/torii.tscn
+res://scenes/action_test.tscn
+res://scripts/Agent.gd

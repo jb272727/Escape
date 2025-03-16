@@ -1,16 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://tw32hdhpet4v"]
+[gd_scene load_steps=6 format=3 uid="uid://tw32hdhpet4v"]
 
 [ext_resource type="PackedScene" uid="uid://dfllm5fhuweay" path="res://scenes/panel_set.tscn" id="1_msmr0"]
 [ext_resource type="PackedScene" uid="uid://c6yvwfmiw8fpt" path="res://scenes/pillar.tscn" id="2_0opeb"]
 [ext_resource type="PackedScene" uid="uid://op3j012tkde4" path="res://scenes/pillar_top.tscn" id="3_68xd4"]
-[ext_resource type="Texture2D" uid="uid://dbb8qwu8xypbr" path="res://scripts/wallpaper1.png" id="4_4wkb8"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4qif"]
-albedo_texture = ExtResource("4_4wkb8")
-uv1_scale = Vector3(21.015, 8.345, 24.635)
+[ext_resource type="Material" uid="uid://cuurtld3ehayi" path="res://library_wallpaper_mat.tres" id="4_xt7w8"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_73t5n"]
-material = SubResource("StandardMaterial3D_i4qif")
+material = ExtResource("4_xt7w8")
 size = Vector2(9.615, 7.855)
 
 [node name="Library Wall" type="Node3D"]

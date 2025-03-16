@@ -1,14 +1,15 @@
 [gd_scene load_steps=23 format=3 uid="uid://y256k68c4r3y"]
 
 [ext_resource type="PackedScene" uid="uid://tw32hdhpet4v" path="res://scenes/library_wall.tscn" id="1_37s70"]
+[ext_resource type="Script" path="res://scripts/Agent.gd" id="1_e3bv1"]
 [ext_resource type="Script" path="res://scripts/Game Manager Library.gd" id="1_ex5o8"]
 [ext_resource type="PackedScene" uid="uid://dfllm5fhuweay" path="res://scenes/panel_set.tscn" id="1_it8yq"]
 [ext_resource type="Script" path="res://scripts/Entry Camera.gd" id="2_h8fne"]
 [ext_resource type="PackedScene" uid="uid://c6yvwfmiw8fpt" path="res://scenes/pillar.tscn" id="2_if8cw"]
 [ext_resource type="PackedScene" uid="uid://op3j012tkde4" path="res://scenes/pillar_top.tscn" id="3_gwrtv"]
-[ext_resource type="Texture2D" uid="uid://dbb8qwu8xypbr" path="res://scripts/wallpaper1.png" id="4_0kd5l"]
 [ext_resource type="Texture2D" uid="uid://bfj5udrp8tmdi" path="res://wallpaper.tres" id="4_eeo84"]
 [ext_resource type="Shader" path="res://assets/usuable/psx_camera_shader.gdshader" id="5_fhqnj"]
+[ext_resource type="Material" uid="uid://cuurtld3ehayi" path="res://library_wallpaper_mat.tres" id="6_xxaav"]
 [ext_resource type="Material" uid="uid://btyr6qc5t4rlu" path="res://assets/library assets/mahogany-library.tres" id="7_6e3lm"]
 [ext_resource type="PackedScene" uid="uid://saf26gond6bf" path="res://scenes/arena.tscn" id="9_u07rl"]
 
@@ -26,12 +27,8 @@ colors = PackedColorArray(0.252723, 0.00079151, 0.526882, 0, 0.760784, 0.470588,
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cpv5q"]
 gradient = SubResource("Gradient_l804r")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acukv"]
-albedo_texture = ExtResource("4_0kd5l")
-uv1_scale = Vector3(21.015, 8.345, 24.635)
-
 [sub_resource type="QuadMesh" id="QuadMesh_pcuc4"]
-material = SubResource("StandardMaterial3D_acukv")
+material = ExtResource("6_xxaav")
 size = Vector2(9.615, 7.855)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6srli"]
@@ -71,6 +68,9 @@ ambient_light_color = Color(0.00971344, 0.00971182, 0.0562966, 1)
 ambient_light_energy = 2.68
 
 [node name="Library" type="Node3D"]
+
+[node name="Agent" type="Node" parent="."]
+script = ExtResource("1_e3bv1")
 
 [node name="Game Manager Library" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -267,3 +267,4 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.8892
 in_scene = true
 
 [connection signal="gui_input" from="Cameras/Entry Camera/Control/MiddleRect" to="Cameras/Entry Camera" method="_on_middle_rect_gui_input"]
+[connection signal="player_turn_ended" from="Arena Wrapper/Arena" to="Agent" method="_on_arena_player_turn_ended"]
