@@ -1,13 +1,13 @@
 res://scenes/main.tscn
 res://blue_marble.tres
-res://red_marble.tres
-res://glow.tres
 res://assets/misc/arcade_carpet.tres
 res://assets/misc/gold.tres
 res://blue_mat_override_new.tres
 res://text_mat_glow.tres
 res://assets/library assets/mahogany-library.tres
 res://library_wallpaper_mat.tres
+res://red_marble.tres
+res://glow.tres
 res://scenes/library.tscn
 res://scenes/arena.tscn
 res://scenes/checker_black.tscn
@@ -26,4 +26,5 @@ res://scenes/library_wall.tscn
 res://scenes/diamond.tscn
 res://scenes/torii.tscn
 res://scenes/action_test.tscn
+res://scripts/Board State.gd
 res://scripts/Agent.gd

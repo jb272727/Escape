@@ -25,10 +25,12 @@ func _ready():
 	set_board()
 
 func set_board():
-	for i in range(board_total_size):
+	print("SETTING BOARD SETTING BOARD SETTING BOARD SETTING BOARD")
+	current_board.state = []
+	for i in range(board_total_size - 1, -1, -1):
 		var row = pos_to_move_to.get_child(i)
 		var row_append := []
-		for j in range(board_total_size):
+		for j in range(board_total_size - 1, -1, -1):
 			var col = row.get_child(j)
 			var piece = col.get_child(1)
 			if piece == null:
@@ -39,12 +41,14 @@ func set_board():
 				#current_board.state[i][j] = piece
 				current_board.piece_dict[piece] = [i,j]
 		current_board.state.append(row_append)
+		print("current state rep:")
+		print(current_board.state)
 
 func set_initial_tile_state():
 	for i in range(board_total_size):
 		var row_append := []
 		for j in range(board_total_size):
-			if i < board_buffer or i > board_total_size - board_buffer or j < board_buffer or j > board_total_size - board_buffer:
+			if i < board_buffer or i > board_total_size - (2*board_buffer) + 1 or j < board_buffer or j > board_total_size - (2*board_buffer) + 1:
 				row_append.append(false)
 			else:
 				row_append.append(true)

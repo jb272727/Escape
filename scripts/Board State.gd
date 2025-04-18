@@ -102,6 +102,7 @@ func print_board():
 	print()
 	print(piece_dict)
 	print()
+	print("STATE | STATE | STATE | STATE | STATE")
 	print(state)
 	print()
 	print(tile_state)
