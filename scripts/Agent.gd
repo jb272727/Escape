@@ -14,7 +14,7 @@ var friendly_lineup : Array
 func _ready():
 	pos_to_move_to = arena.find_child("Arena To Scale").find_child("Positions To Move To")
 	await arena.arena_ready
-	print("-----------------YEah---------------")
+	print("Arena Ready")
 	enemy_lineup = arena.enemy_lineup
 	friendly_lineup = arena.friendly_lineup
 	board_total_size = arena.board_total
@@ -24,9 +24,14 @@ func _ready():
 	set_lineups()
 	set_board()
 
+
 func set_board():
-	print("SETTING BOARD SETTING BOARD SETTING BOARD SETTING BOARD")
 	current_board.state = []
+	current_board.size = board_total_size
+	current_board.piece_dict.clear()
+	current_board.enemy_pieces.clear()
+	current_board.friendly_pieces.clear()
+
 	for i in range(board_total_size - 1, -1, -1):
 		var row = pos_to_move_to.get_child(i)
 		var row_append := []
@@ -35,14 +40,19 @@ func set_board():
 			var piece = col.get_child(1)
 			if piece == null:
 				row_append.append(null)
-				#current_board.state[i][j] = null
 			else:
 				row_append.append(piece)
-				#current_board.state[i][j] = piece
-				current_board.piece_dict[piece] = [i,j]
+				current_board.piece_dict[piece] = [i - 1, j - 1]
 		current_board.state.append(row_append)
-		print("current state rep:")
-		print(current_board.state)
+
+	# Classify pieces as enemy or friendly based on name
+	for piece in current_board.piece_dict.keys():
+		if piece.name.substr(piece.name.length() - 5) == "Enemy":
+			current_board.enemy_pieces.append(piece)
+		else:
+			current_board.friendly_pieces.append(piece)
+	# @TODO: tileset changes need to be expressed here!
+	
 
 func set_initial_tile_state():
 	for i in range(board_total_size):
@@ -63,9 +73,11 @@ func set_lineups():
 
 func do_action(action : Action):
 	current_board = action.get_resulting_state(true)
-	var from = [action.from[0] - 1, action.from[1] - 1]
-	var to = [action.to[0] - 1, action.to[1] - 1]
-	arena.move_piece(from, to, action.piece)
+	var from = [action.from[0], action.from[1]]
+	print(from)
+	var to = [action.to[0], action.to[1]]
+	print(to)
+	arena.move_piece(from, to, action.piece, true)
 
 # @TODO just check if the node is visible: if yes -> true, if no -> false
 #func set_tile_state()
@@ -84,6 +96,7 @@ func max_value(state : BoardState, depth : int) -> Array: #returns a <utility, a
 		var values = min_value(action.get_resulting_state(true), depth + 1)
 		if values[0] > move[0]:
 			move = [values[0], action]
+	
 	return move
 
 func min_value(state : BoardState, depth : int) -> Array:
@@ -100,9 +113,14 @@ func min_value(state : BoardState, depth : int) -> Array:
 
 func _on_arena_player_turn_ended():
 	set_board()
+	if current_board.is_terminal():
+		print("You win")
 	current_board.print_board()
-	var action_to_do = minimax_search(current_board)
+	var action_to_do = minimax_search(current_board.copy())
 	print("ACTION TO DO", action_to_do)
 	action_to_do.print_action()
-	current_board.print_board()
 	do_action(action_to_do)
+	print("-------------After the action----------------------------------------------------")
+	current_board.print_board()
+	if current_board.is_terminal() == true:
+		print("Opponent Wins")

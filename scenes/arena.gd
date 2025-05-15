@@ -145,23 +145,32 @@ func _input(event):
 				for move in moveset:
 					if coords == move:
 						print("Attempting the moving of " + str(selected_piece) + " to " + str(coords) + " from " + str(selected_coords))
-						var moving_result = move_piece(selected_coords, coords, selected_piece)
-						if moving_result == false and not is_enemy_piece(result):     # If the result matches, but we should be switching to a different piece if its friendly, select that piece
-							selected_coords = coords
-							selected_piece = result
-							clear_checker_movesets()
-							display_valid_moves(selected_piece, selected_coords)
-							return
-						elif is_enemy_piece(result):
-							clear_checker_movesets()
-							display_valid_enemy_moves(selected_piece, selected_coords)
-							#take_piece(selected_coords, coords, selected_piece)
-							return
-						else: # movement to non-enemy square should succeed
+						var moving_result : bool = false
+						if is_enemy_piece(result):
+							moving_result = move_piece(selected_coords, coords, selected_piece, true)
 							clear_checker_movesets()
 							is_picked = false
 							emit_signal("player_turn_ended")
 							return
+						else:
+							moving_result = move_piece(selected_coords, coords, selected_piece, false)
+							if moving_result == false and not is_enemy_piece(result):     # If the result matches, but we should be switching to a different piece if its friendly, select that piece
+								selected_coords = coords
+								selected_piece = result
+								clear_checker_movesets()
+								display_valid_moves(selected_piece, selected_coords)
+								return
+							elif is_enemy_piece(result):
+								clear_checker_movesets()
+								display_valid_enemy_moves(selected_piece, selected_coords)
+								#take_piece(selected_coords, coords, selected_piece)
+								return
+							else: # movement to non-enemy square should succeed
+								clear_checker_movesets()
+								is_picked = false
+								emit_signal("player_turn_ended")
+								return
+
 				# We found no move which matched with the clicked tile
 			if result != null and not is_enemy_piece(result):
 				selected_coords = coords
@@ -179,13 +188,21 @@ func _input(event):
 				selected_coords = [null,null]
 				selected_piece = null
 
-func move_piece(from : Array, to : Array, piece : Node3D):
+func move_piece(from : Array, to : Array, piece : Node3D, ai : bool):
 	var from_node = positions_to_move_to.get_child(from[0] + 1).get_child(from[1] + 1).get_child(1)
+	print(from_node.name)
 	var to_node = positions_to_move_to.get_child(to[0] + 1).get_child(to[1] + 1).get_child(1)
+	#print(to_node.name)
 	var to_node_parent = positions_to_move_to.get_child(to[0] + 1).get_child(to[1] + 1)
 	assert(from_node != null, "From node should never be null")
 	if to_node != null:
-		return false
+		if not ai:
+			return false
+		else:
+			to_node_parent.remove_child(to_node)
+			piece.reparent(to_node_parent)
+			piece.global_position = to_node_parent.global_position
+			return false
 	else:
 		# Do dropping animation!!!!!!!!!!!!!
 		#
@@ -411,7 +428,7 @@ func input_not_in_scene():
 					#display_move(move)
 					if coords == move:
 						print("Moving " + str(selected_piece) + " to " + str(coords) + " from " + str(selected_coords))
-						var moving_result = move_piece(selected_coords, coords, selected_piece)
+						var moving_result = move_piece(selected_coords, coords, selected_piece, true)
 						if moving_result == false:     # If the result matches, but we should be switching to a different piece, select that piece
 							selected_coords = coords
 							selected_piece = result
