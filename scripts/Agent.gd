@@ -9,6 +9,10 @@ var board_buffer : int
 var pos_to_move_to : Node3D
 var enemy_lineup : Array
 var friendly_lineup : Array
+@onready var game_manager_library = %"Game Manager Library"
+@onready var agent_timer = $"Agent Timer"
+
+signal enemy_clicked_signal
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -71,13 +75,15 @@ func set_lineups():
 	current_board.enemy_pieces = enemy_lineup
 	current_board.friendly_pieces = friendly_lineup
 
-func do_action(action : Action):
+func do_action(action : Action) -> bool:
 	current_board = action.get_resulting_state(true)
 	var from = [action.from[0], action.from[1]]
 	print(from)
 	var to = [action.to[0], action.to[1]]
 	print(to)
 	arena.move_piece(from, to, action.piece, true)
+	print("action completed")
+	return true
 
 # @TODO just check if the node is visible: if yes -> true, if no -> false
 #func set_tile_state()
@@ -110,17 +116,29 @@ func min_value(state : BoardState, depth : int) -> Array:
 			move = [values[0], action]
 	return move
 
-
+# Run after player moves a piece, then await Game Manager click
 func _on_arena_player_turn_ended():
+	print("player moved piece (player turn ended)")
+	game_manager_library.moved_piece = true
 	set_board()
 	if current_board.is_terminal():
 		print("You win")
-	current_board.print_board()
+		# @TODO: emit signal to Game Manager to reset the arena and clock and other things if necessary
+		return
+
 	var action_to_do = minimax_search(current_board.copy())
 	print("ACTION TO DO", action_to_do)
 	action_to_do.print_action()
+	
+	await game_manager_library.click_signal
+	# @TODO: make random timer here BETTER so the AI spends better time "thinking"
+	var ran : float = 1.0 + randf()
+	agent_timer.start(ran)
+	await agent_timer.timeout
 	do_action(action_to_do)
-	print("-------------After the action----------------------------------------------------")
-	current_board.print_board()
 	if current_board.is_terminal() == true:
 		print("Opponent Wins")
+	
+	game_manager_library.moved_piece = false
+	emit_signal("enemy_clicked_signal")
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://y256k68c4r3y"]
+[gd_scene load_steps=24 format=3 uid="uid://y256k68c4r3y"]
 
 [ext_resource type="PackedScene" uid="uid://tw32hdhpet4v" path="res://scenes/library_wall.tscn" id="1_37s70"]
 [ext_resource type="Script" path="res://scripts/Agent.gd" id="1_e3bv1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Material" uid="uid://cuurtld3ehayi" path="res://library_wallpaper_mat.tres" id="6_xxaav"]
 [ext_resource type="Material" uid="uid://btyr6qc5t4rlu" path="res://assets/library assets/mahogany-library.tres" id="7_6e3lm"]
 [ext_resource type="PackedScene" uid="uid://saf26gond6bf" path="res://scenes/arena.tscn" id="9_u07rl"]
+[ext_resource type="PackedScene" uid="uid://ben71cc8cbyd1" path="res://scenes/chess_clock.tscn" id="13_wc3x7"]
 
 [sub_resource type="Gradient" id="Gradient_fy7x0"]
 offsets = PackedFloat32Array(0, 0.0205279)
@@ -71,6 +72,9 @@ ambient_light_energy = 2.68
 
 [node name="Agent" type="Node" parent="."]
 script = ExtResource("1_e3bv1")
+
+[node name="Agent Timer" type="Timer" parent="Agent"]
+one_shot = true
 
 [node name="Game Manager Library" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -266,5 +270,11 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.8892
 [node name="Arena" parent="Arena Wrapper" instance=ExtResource("9_u07rl")]
 in_scene = true
 
+[node name="Chess Clock" parent="Arena Wrapper" instance=ExtResource("13_wc3x7")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.7718, 0, 2.47185)
+
+[connection signal="enemy_clicked_signal" from="Agent" to="Game Manager Library" method="_on_agent_start_player_clock"]
 [connection signal="gui_input" from="Cameras/Entry Camera/Control/MiddleRect" to="Cameras/Entry Camera" method="_on_middle_rect_gui_input"]
 [connection signal="player_turn_ended" from="Arena Wrapper/Arena" to="Agent" method="_on_arena_player_turn_ended"]
+[connection signal="start_enemy_clock" from="Arena Wrapper/Arena" to="Game Manager Library" method="_on_arena_start_enemy_clock"]
+[connection signal="start_player_clock" from="Arena Wrapper/Arena" to="Game Manager Library" method="_on_arena_start_player_clock"]

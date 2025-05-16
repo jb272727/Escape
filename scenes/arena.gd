@@ -1,6 +1,16 @@
 extends Node3D
 
 @onready var positions_to_move_to = $"Arena To Scale/Positions To Move To"
+#@onready var chess_clock = $"../Chess Clock"
+#@onready var enemy_clock : Label3D = $"../Chess Clock/chess_clock/Enemy Clock"
+#@onready var player_clock : Label3D = $"../Chess Clock/chess_clock/Player Clock"
+#@onready var enemy_timer : Label3D = $"../Chess Clock/chess_clock/Enemy Clock/Timer"
+#@onready var player_timer : Label3D = $"../Chess Clock/chess_clock/Player Clock/Timer"
+#@onready var clicker = $"../Chess Clock/chess_clock/clicker"
+#@export var playing_time_minutes : int = 5
+#var clicker_rotation_z : float = 6.0
+#
+#var players_turn : bool = true
 
 @onready var playing_camera = $"Arena To Scale/Arena Cameras/Playing Camera"
 var current_object : StaticBody3D
@@ -42,9 +52,13 @@ var board_buffer : int = 2
 var selected_piece : Node3D = null
 var selected_coords : Array = [null,null]
 var is_picked : bool = false
+@export var can_click : bool = true
+@export var can_select : bool = true
 
 signal player_turn_ended
 signal arena_ready
+signal start_enemy_clock
+signal start_player_clock
 
 func _ready():
 	camera = playing_camera
@@ -78,7 +92,10 @@ func _ready():
 	add_enemy_pieces()
 	print_board()
 	
-	board_representation = BoardState.new()
+	#clicker.rotation_degrees = Vector3(0.0, 0.0, -clicker_rotation_z) # - is players turn, + is enemies turn
+	#playing_time_minutes
+	#enemy_clock.text = str(playing_time_minutes) + ":00"
+	#player_clock.text = str(playing_time_minutes) + ":00"
 	
 	emit_signal("arena_ready")
 	
@@ -90,6 +107,10 @@ func _ready():
 
 
 func _process(delta):
+	#if players_turn:
+		#update_player_clock()
+	#else:
+		#updating_enemy_clock()
 	if not in_scene:
 		var mousePos = get_viewport().get_mouse_position()
 		#print(mousePos)
@@ -114,14 +135,17 @@ func _process(delta):
 func get_current_object() -> StaticBody3D:
 	return current_object
 
+
 func _input(event):
 	if Input.is_action_just_pressed("lmb"):
 		if not in_scene:
 			input_not_in_scene()
 			return
 		
+		#if not can_click: return
 		hit_object = %"Game Manager Library".get_current_object()
 		if hit_object == null: return
+		if hit_object.get_collision_layer() == 3: return
 		var coords = get_coords(hit_object)
 		if coords == null: return
 		
@@ -147,14 +171,21 @@ func _input(event):
 						print("Attempting the moving of " + str(selected_piece) + " to " + str(coords) + " from " + str(selected_coords))
 						var moving_result : bool = false
 						if is_enemy_piece(result):
+							if not can_click: return
+							var test_piece_existence = get_piece_at_coords(selected_coords)
+							if test_piece_existence == null: return
 							moving_result = move_piece(selected_coords, coords, selected_piece, true)
 							clear_checker_movesets()
 							is_picked = false
+							can_click = false
 							emit_signal("player_turn_ended")
 							return
 						else:
+							var test_piece_existence = get_piece_at_coords(selected_coords)
+							if test_piece_existence == null: return
 							moving_result = move_piece(selected_coords, coords, selected_piece, false)
 							if moving_result == false and not is_enemy_piece(result):     # If the result matches, but we should be switching to a different piece if its friendly, select that piece
+								if not can_click: return
 								selected_coords = coords
 								selected_piece = result
 								clear_checker_movesets()
@@ -168,6 +199,7 @@ func _input(event):
 							else: # movement to non-enemy square should succeed
 								clear_checker_movesets()
 								is_picked = false
+								can_click = false
 								emit_signal("player_turn_ended")
 								return
 
@@ -189,6 +221,7 @@ func _input(event):
 				selected_piece = null
 
 func move_piece(from : Array, to : Array, piece : Node3D, ai : bool):
+	if not can_click and ai == false: return false
 	var from_node = positions_to_move_to.get_child(from[0] + 1).get_child(from[1] + 1).get_child(1)
 	print(from_node.name)
 	var to_node = positions_to_move_to.get_child(to[0] + 1).get_child(to[1] + 1).get_child(1)
