@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtv53jkfm38vs"]
+
+[ext_resource type="Script" path="res://scripts/floater.gd" id="1_4mjig"]
+[ext_resource type="PackedScene" uid="uid://ojkr214mp510" path="res://assets/library assets/tooth.glb" id="1_h5vjj"]
+
+[node name="Tooth" type="Node3D"]
+script = ExtResource("1_4mjig")
+
+[node name="tooth" parent="." instance=ExtResource("1_h5vjj")]

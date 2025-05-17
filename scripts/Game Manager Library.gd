@@ -12,7 +12,7 @@ var blur_amt := 1.0
 @onready var player_clock : Label3D = $"../Arena Wrapper/Chess Clock/Player Clock"
 @onready var clicker = $"../Arena Wrapper/Chess Clock/chess_clock/clicker"
 @onready var clock_body = $"../Arena Wrapper/Chess Clock/StaticBody3D"
-@export var playing_time_minutes : int = 1
+@export var playing_time_minutes : int = 5
 var clicker_rotation_z : float = 6.0
 
 @export var game_started : bool = false

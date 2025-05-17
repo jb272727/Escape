@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://y256k68c4r3y"]
+[gd_scene load_steps=25 format=3 uid="uid://y256k68c4r3y"]
 
 [ext_resource type="PackedScene" uid="uid://tw32hdhpet4v" path="res://scenes/library_wall.tscn" id="1_37s70"]
 [ext_resource type="Script" path="res://scripts/Agent.gd" id="1_e3bv1"]
@@ -13,6 +13,7 @@
 [ext_resource type="Material" uid="uid://btyr6qc5t4rlu" path="res://assets/library assets/mahogany-library.tres" id="7_6e3lm"]
 [ext_resource type="PackedScene" uid="uid://saf26gond6bf" path="res://scenes/arena.tscn" id="9_u07rl"]
 [ext_resource type="PackedScene" uid="uid://ben71cc8cbyd1" path="res://scenes/chess_clock.tscn" id="13_wc3x7"]
+[ext_resource type="PackedScene" uid="uid://dtv53jkfm38vs" path="res://scenes/tooth.tscn" id="14_hogv3"]
 
 [sub_resource type="Gradient" id="Gradient_fy7x0"]
 offsets = PackedFloat32Array(0, 0.0205279)
@@ -272,6 +273,9 @@ in_scene = true
 
 [node name="Chess Clock" parent="Arena Wrapper" instance=ExtResource("13_wc3x7")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.7718, 0, 2.47185)
+
+[node name="Tooth" parent="." instance=ExtResource("14_hogv3")]
+transform = Transform3D(0.03, 0, 0, 0, 0.0299838, -0.000986281, 0, 0.000986281, 0.0299838, 7.75617, 3.19582, -5.74244)
 
 [connection signal="enemy_clicked_signal" from="Agent" to="Game Manager Library" method="_on_agent_start_player_clock"]
 [connection signal="gui_input" from="Cameras/Entry Camera/Control/MiddleRect" to="Cameras/Entry Camera" method="_on_middle_rect_gui_input"]

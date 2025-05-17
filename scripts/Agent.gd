@@ -138,6 +138,7 @@ func _on_arena_player_turn_ended():
 	do_action(action_to_do)
 	if current_board.is_terminal() == true:
 		print("Opponent Wins")
+		game_manager_library.reset_game()
 	
 	game_manager_library.moved_piece = false
 	emit_signal("enemy_clicked_signal")
