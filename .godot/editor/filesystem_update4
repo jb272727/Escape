@@ -1,16 +1,17 @@
-res://blue_marble.tres
-res://red_marble.tres
-res://glow.tres
+res://scenes/main.tscn
 res://assets/misc/arcade_carpet.tres
 res://assets/misc/gold.tres
 res://blue_mat_override_new.tres
 res://text_mat_glow.tres
 res://assets/library assets/mahogany-library.tres
 res://library_wallpaper_mat.tres
+res://blue_marble.tres
+res://red_marble.tres
+res://glow.tres
 res://scenes/library.tscn
-res://scenes/main.tscn
 res://scenes/arena.tscn
 res://scenes/chess_clock.tscn
+res://scenes/tooth.tscn
 res://scenes/checker_black.tscn
 res://scenes/checker_moveset.tscn
 res://scenes/checker_opponent_moveset.tscn
@@ -27,5 +28,4 @@ res://scenes/library_wall.tscn
 res://scenes/diamond.tscn
 res://scenes/torii.tscn
 res://scenes/action_test.tscn
-res://scenes/tooth.tscn
-res://scripts/floater.gd
+res://scenes/curtain.tscn
